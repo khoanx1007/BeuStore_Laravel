@@ -1,0 +1,324 @@
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .img-bg>img{
+        height: 80%;
+    }
+    .text-inside{
+        font-size: 30px;
+    }
+    .text-inside>h4{
+        font-size: 20px;
+    }  
+    .btn-shop>a{
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+    .absolute{
+        top: 50%;
+    }
+    .bannerb-left{
+        font-size: 15px;
+    }
+    .bannerb-left>h1{
+        font-size: 25px;
+    }
+    .bannerb-right{
+        font-size: 15px;
+    }
+    .bannerb-right>h1{
+        font-size: 25px;
+    }
+    .buy-shop>a{
+        font-size: 12px;
+        padding:5px 10px ;
+    }
+    .category-product{
+        width: 50%; 
+        }
+    #helloworld{
+            display:none;
+        }    
+    .searchbox{
+        display:none;
+    }
+    .calling-box{
+        display: none;
+    }
+    .navi{
+        display: none !important;
+    }
+    .category-menu{
+            width: 95%;
+        }
+    #icon-header-bar{
+        display: block !important;
+    }
+    .desktop-content{
+        display: none;
+    }
+    .tab-content{
+        display: block;
+    }
+    #bars {
+        font-size: 22px;
+        margin-left: 10px;
+        display: block;
+    }
+    .menu-responsive{
+        display: none;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 100000;
+    }
+    .menu-resin{
+        position: fixed;
+        display: block;
+        width: 70%;
+        background-color: white;
+        height: 100%;
+    }
+    .listcate3{
+        top: 59%;
+        left: 37%;
+        position: absolute;
+        width: 120px;
+        z-index: 100;
+        box-shadow: 0 0 30px 0 rgb(0 0 0 / 15%) !important;
+        background-color: white;
+        padding: 10px 5px;
+        border-radius: 5px;
+        display: none;
+        color: black;
+    }
+    .fa-times{
+        font-size: 20px;
+    }
+    .res-menu{
+        display: flex;
+        justify-content: space-between;
+    }
+    .res-menul>li>a{
+        color: gray;
+        text-decoration: none !important;
+        cursor: pointer;
+    }
+    .res-menul>li>a:hover{
+        color: dodgerblue;
+    }
+    .res-menu2{
+        display: none;
+    }
+    #minus{
+        display: none;
+    }
+    .black{
+        font-size: 20px;
+        color: black;
+        font-weight: bold;
+        text-decoration: none !important;
+        cursor: pointer;
+    }
+    .black:hover{
+        color: dodgerblue;
+    }
+    .res-menuicon{
+        bottom: 100px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: dodgerblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: black;
+        margin-right: 10px;
+    }
+    .gta-v-text{
+        padding:100px 0px;
+        font-size: 30px;
+    }
+    #GtaV-text{
+        font-size: 25px;
+    }
+    .gta-v-text>h1{
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 320px) and (max-width: 767px){
+    
+    .img-bg>img{
+        height: 100%;
+    }
+    #searching{
+        height: 27px;
+    }
+    #submit{
+        height: 27px !important;
+        font-size: 17px;
+    }
+    .text-inside{
+        font-size: 12px;
+    }  
+    .text-inside>h4{
+        font-size: 10px;
+    }  
+    .text-inside>p{
+        font-size: 15px;
+        margin-bottom: 5px;
+    }  
+    .btn-shop>a{
+        padding: 4px 7px;
+        font-size: 7px;
+    }
+    .bannerb-left{
+        height: auto;
+        font-size: 15px;
+    }
+    .bannerb-left>h1{
+        font-size: 25px;
+    }
+    .res-menuicon{
+        bottom: 100px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: dodgerblue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: black;
+        margin-right: 10px;
+    }
+    .bannerb-right{
+        font-size: 15px;
+        height: auto;
+    }
+    .bannerb-right>h1{
+        font-size: 25px;
+    }
+    .buy-shop>a{
+        font-size: 12px;
+        padding:5px 10px ;
+    }
+    .subto{
+        font-size:15px;
+    }
+    .absolute{
+        top: 50%;
+    }
+    #helloworld{
+        display:none;
+    }
+    .more-category {
+        text-align: left;
+        padding-top: 15px;
+    }
+    .category-product{
+        width: 100%;
+    }
+    .searchbox{
+        display:none;
+    }
+    .calling-box{
+        display: none;
+    }
+    .navi{
+        display: none !important;
+    }
+    .category-menu{
+        width: 94%;
+    }
+    .gta-v-text{
+        padding:70px 0px;
+        font-size: 30px;
+    }
+    #GtaV-text{
+        font-size: 20px;
+    }
+    .gta-v-text>h1{
+        font-size: 20px;
+    }
+    .gta-v-text>p{
+        font-size: 10px;
+    }
+    
+    #icon-header-bar{
+        display: block !important;
+    }
+    .desktop-content{
+        display: none ;
+    }
+    .tab-content{
+        display: block;
+    }
+    #bars {
+        display: block;
+        font-size: 22px;
+        margin-left: 10px;
+    }
+    .menu-responsive{
+        display: none;;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 100000;
+    }
+    .menu-resin{
+        position: fixed;
+        display: block;
+        width: 90%;
+        background-color: white;
+        height: 100%;
+    }
+    .listcate3{
+        top: 59%;
+        left: 37%;
+        position: absolute;
+        width: 120px;
+        z-index: 100;
+        box-shadow: 0 0 30px 0 rgb(0 0 0 / 15%) !important;
+        background-color: white;
+        padding: 10px 5px;
+        border-radius: 5px;
+        display: none;
+        color: black;
+    }
+    .fa-times{
+        font-size: 20px;
+    }
+    .subtoour{
+        font-size:25px;
+    }
+    .res-menu{
+        display: flex;
+        justify-content: space-between;
+    }
+    .res-menul>li>a{
+        color: gray;
+        text-decoration: none !important;
+        cursor: pointer;
+    }
+    .res-menul>li>a:hover{
+        color: dodgerblue;
+    }
+    .res-menu2{
+        display: none;
+    }
+    #minus{
+        display: none;
+    }
+    .black{
+        color: black;
+        font-weight: bold;
+        text-decoration: none !important;
+        cursor: pointer;
+    }
+    .black:hover{
+        color: dodgerblue;
+    }
+    }
