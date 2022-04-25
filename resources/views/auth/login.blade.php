@@ -32,7 +32,7 @@
 <div class="limiter">
   <div class="container-login100">
     <div class="wrap-login100">
-      <form class="login100-form validate-form" action="{{ route('auth.login') }}" method="post">
+      <form class="login100-form validate-form" action="{{ route('auth.login') }}" method="POST">
         @csrf
         <span class="login100-form-title p-b-43">
           Đăng nhập
@@ -54,7 +54,7 @@
         <div class="flex-sb-m w-full p-t-3 p-b-32">
           <div class="contact100-form-checkbox">
             <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-            <label class="label-checkbox100" for="ckb1">
+            <label class="label-checkbox100" id="remember" name="remember" value="true" for="ckb1">
               Duy trì đăng nhập
             </label>
           </div>

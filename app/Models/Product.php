@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage; 
 
 class Product extends Model
 {
@@ -15,6 +17,10 @@ class Product extends Model
         'created_at',
         'updated_at',
     ];
+    public function getMyImageAttribute(){
+        $url = Storage::disk($this->disk)->url($this->image);
+        return $url;
+    }
     public function setNameAttribute($name){
         $this->attributes['name'] = $name;
         $this->attributes['slug'] = Str::slug($name);

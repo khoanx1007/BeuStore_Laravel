@@ -3,13 +3,13 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="/backend/assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+                    <img src="{{ auth()->user()->my_image }}" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a  href="#collapseExample" >
                         <span>
-                            Hizrian
-                            <span class="user-level">Administrator</span>
+                            {{ auth()->user()->name }}
+                            <span class="user-level">{{ auth()->user()->role }}</span>
                         </span>
                     </a>
                     <div class="clearfix"></div>
@@ -17,15 +17,9 @@
             </div>
             <ul class="nav nav-primary">
                 <li class="nav-item active">
-                    <a href="#dashboard">
-                        <i class="fas fa-home"></i>
+                    <a href="{{ route('backend.dashboard') }}">
+                        <i class="fas fa-home @if (request()->routeIs('backend.dashboard')) active @endif"></i>
                         <p>Bảng điều khiển</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#dashboard">
-                        <i class="fas fa-folder-open"></i>
-                        <p>Kho ảnh</p>
                     </a>
                 </li>
                 <li class="nav-section">
@@ -34,42 +28,42 @@
                     </span>
                     <h4 class="text-section">Quản lí hệ thống</h4>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item @if (request()->routeIs('backend.categories.*')) active submenu @endif">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
                         <p>Danh mục</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="base">
+                    <div class="collapse @if (request()->routeIs('backend.categories.*')) show @endif" id="base">
                         <ul class="nav nav-collapse">
-                            <li>
-                                <a href="components/avatars.html">
+                            <li class="nav-item @if (request()->routeIs('backend.categories.create')) active  @endif">
+                                <a href="{{ route('backend.categories.create') }}">
                                     <span class="sub-item">Tạo danh mục</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="components/buttons.html">
+                            <li class="nav-item @if (request()->routeIs('backend.categories.index')) active  @endif">
+                                <a href="{{ route('backend.categories.index') }}">
                                     <span class="sub-item">Danh sách danh mục</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item @if (request()->routeIs('backend.products.*')) active submenu @endif">
                     <a data-toggle="collapse" href="#sidebarLayouts">
                         <i class="fas fa-th-list"></i>
                         <p>Sản phẩm</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="sidebarLayouts">
+                    <div class="collapse @if (request()->routeIs('backend.products.*')) show @endif" id="sidebarLayouts">
                         <ul class="nav nav-collapse">
-                            <li>
-                                <a href="sidebar-style-1.html">
+                            <li class="@if (request()->routeIs('backend.products.create')) active @endif">
+                                <a href="{{ route('backend.products.create') }}" >
                                     <span class="sub-item">Tạo sản phẩm</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="overlay-sidebar.html">
+                            <li class="@if (request()->routeIs('backend.products.index')) active @endif">
+                                <a href="{{ route('backend.products.index') }}">
                                     <span class="sub-item">Danh sách sản phẩm</span>
                                 </a>
                             </li>
@@ -206,7 +200,7 @@
                     <div class="collapse" id="forms">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="forms/forms.html">
+                                <a href="{{ route('backend.users.index') }}">
                                     <span class="sub-item">Danh sách</span>
                                 </a>
                             </li>

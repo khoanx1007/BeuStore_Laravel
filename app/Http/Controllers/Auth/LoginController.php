@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\AuthenticateLoginRequest;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -13,10 +13,10 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
-    public function authenticate (AuthenticateLoginRequest $request)
+    public function authenticate(AuthenticateLoginRequest $request)
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email'],
+            'email' => ['required','email'],
             'password' => ['required'], 
         ]);
         if($request->get('remember')){
@@ -25,7 +25,9 @@ class LoginController extends Controller
         else{
             $remember = false;
         }
-        if (Auth::attempt($credentials,$remember)) {
+        // dd($remember);
+        
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/');
         }

@@ -30,35 +30,42 @@ Danh sách danh mục
             {{ session('success') }}
           </div>
         @endif
-        <!-- Small boxes (Stat box) -->
+        <div class="page-inner">
+          <div class="page-header">
+            <h4 class="page-title">Danh sách sản phẩm</h4>
+            <ul class="breadcrumbs">
+              <li class="nav-home">
+                <a href="#">
+                  <i class="flaticon-home"></i>
+                </a>
+              </li>
+              <li class="separator">
+                <i class="flaticon-right-arrow"></i>
+              </li>
+              <li class="nav-item">
+                <a href="#">Sản phẩm</a>
+              </li>
+              <li class="separator">
+                <i class="flaticon-right-arrow"></i>
+              </li>
+              <li class="nav-item">
+                <a href="#">Danh sách</a>
+              </li>
+            </ul>
+          </div>
           <div class="row">
-            <div class="col-12">
+            <div class="col-md-12">
               <div class="card">
-                <!-- /.card-header -->
                 <div class="card-header d-flex justify-content-between">
-                  <div>
-                    <a href="{{route('backend.categories.create') }}"  class="btn btn-success"><i class="fas fa-plus"></i></a>
-                    <a href="{{route('backend.categories.index2') }}"  class="btn btn-success"><i class="fas fa-recycle"></i></a>
-                  </div>
-                  <div class="card-tools">
-                    <div class="input-group input-group-sm" style="width: 150px;">
-                      <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                      <div class="input-group-append">
-                        <button type="submit" class="btn btn-default">
-                          <i class="fas fa-search"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <div class="card-title">Danh sách sản phẩm</div>
+                  <a href="{{route('backend.categories.create') }}" class="btn btn-info ml-3" id="create-new-product">Add New</a>
                 </div>
-                <div class="card-body table-responsive">
-                  <table class="table table-hover">
+                <div class="card-body">
+                  <table class="table table-head">
                     <thead>
-                      <tr class="bg-success" aria-expanded="false">
+                      <tr>
                         <th>ID</th>
                         <th>Tên danh mục</th>
-                        <th>Mô tả</th>
                         <th>Ngày tạo</th>
                         <th>Thao tác</th>
                       </tr>
@@ -70,10 +77,10 @@ Danh sách danh mục
                           <td class="text-primary" style="max-width:80px;" >{{$category->name}}
                           <p class="text-dark">Slug: {{$category->slug}}</p>
                           </td>
-                          <td>{{$category->content}}</td>
                           <td>{{$category->created_at}}</td>
                           <td class="d-flex flex-wrap">
-                            <a href="{{route('backend.categories.edit',$category->id) }}"  class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                            <a href="{{route('backend.categories.edit',$category->id) }}">
+                              <button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>
                             <form method="POST" action="{{route('backend.categories.destroy',$category->id) }}">
                               @csrf
                               @method('DELETE')
@@ -85,9 +92,10 @@ Danh sách danh mục
                     </tbody>
                   </table>
                 </div>
-                <!-- /.card-body -->
+                {{-- @include('backend.products.create')
+                @include('backend.products.edit') --}}
               </div>
-              <!-- /.card -->
             </div>
           </div>
+        </div> 
 @endsection

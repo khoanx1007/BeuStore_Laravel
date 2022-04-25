@@ -53,13 +53,7 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $user=User::find($id);
-        return view('backend.users.show',[
-            'user' => $user
-        ]);
-    }
+
     public function create()
     {
         return view('backend.users.create');

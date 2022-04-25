@@ -1,0 +1,51 @@
+*{
+    list-style:outside none none ;
+    margin: 0;
+    padding: 0;
+}
+.linked{
+    background-color: #f3f3f3;
+}
+.acoblock{
+    border-radius: 5px;
+}
+.acoask{
+    background-color: dodgerblue;
+    color: white; 
+    position: relative;
+    cursor: pointer;
+}
+.acoanswer{
+    background-color: whitesmoke;
+}
+.acoanswer {
+  display: none;
+}
+        
+.acoask {
+    color: #FFF;
+    font-size:14px;
+	letter-spacing: 0.8px;
+    padding: 15px;
+    cursor: pointer;  
+}
+.acoask:hover {
+    opacity: 0.9;
+}
+.acoask::before {
+    content: '';
+    vertical-align: middle;
+    float: right;
+    border-top: 10px solid #f5f5f5;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    transform: rotate(0);
+    transition: all 0.5s;
+    margin-top: 5px;
+}
+.active.acoask::before {
+    transform: rotate(-180deg);
+}
+.not-active.acoask::before {
+    transform: rotate(0deg);
+}

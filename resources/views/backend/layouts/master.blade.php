@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	{{-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> --}}
 	<title>ABC Admin - Trang chủ</title>
-	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="/backend/assets/img/icon.ico" type="image/x-icon"/>
-
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+	
 	<!-- Fonts and icons -->
 	<script src="/backend/assets/js/plugin/webfont/webfont.min.js"></script>
 	<script>
@@ -19,11 +19,15 @@
 	</script>
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="/backend/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/backend/assets/css/atlantis.min.css">
-	<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
-
+	<link rel="stylesheet" href="/backend/assets/css/atlantis.min.css">	
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="/backend/assets/css/demo.css">
+	{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" /> --}}
+	<link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+	 
+
+	
 </head>
 <body>
 	<div class="wrapper">
@@ -41,75 +45,6 @@
 		</div>
 		
 		<!-- Custom template | don't include it in your project! -->
-		<div class="custom-template">
-			<div class="title">Settings</div>
-			<div class="custom-content">
-				<div class="switcher">
-					<div class="switch-block">
-						<h4>Logo Header</h4>
-						<div class="btnSwitch">
-							<button type="button" class="changeLogoHeaderColor" data-color="dark"></button>
-							<button type="button" class="selected changeLogoHeaderColor" data-color="blue"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="green"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="red"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="white"></button>
-							<br/>
-							<button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
-						</div>
-					</div>
-					<div class="switch-block">
-						<h4>Navbar Header</h4>
-						<div class="btnSwitch">
-							<button type="button" class="changeTopBarColor" data-color="dark"></button>
-							<button type="button" class="changeTopBarColor" data-color="blue"></button>
-							<button type="button" class="changeTopBarColor" data-color="purple"></button>
-							<button type="button" class="changeTopBarColor" data-color="light-blue"></button>
-							<button type="button" class="changeTopBarColor" data-color="green"></button>
-							<button type="button" class="changeTopBarColor" data-color="orange"></button>
-							<button type="button" class="changeTopBarColor" data-color="red"></button>
-							<button type="button" class="changeTopBarColor" data-color="white"></button>
-							<br/>
-							<button type="button" class="changeTopBarColor" data-color="dark2"></button>
-							<button type="button" class="selected changeTopBarColor" data-color="blue2"></button>
-							<button type="button" class="changeTopBarColor" data-color="purple2"></button>
-							<button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
-							<button type="button" class="changeTopBarColor" data-color="green2"></button>
-							<button type="button" class="changeTopBarColor" data-color="orange2"></button>
-							<button type="button" class="changeTopBarColor" data-color="red2"></button>
-						</div>
-					</div>
-					<div class="switch-block">
-						<h4>Sidebar</h4>
-						<div class="btnSwitch">
-							<button type="button" class="selected changeSideBarColor" data-color="white"></button>
-							<button type="button" class="changeSideBarColor" data-color="dark"></button>
-							<button type="button" class="changeSideBarColor" data-color="dark2"></button>
-						</div>
-					</div>
-					<div class="switch-block">
-						<h4>Background</h4>
-						<div class="btnSwitch">
-							<button type="button" class="changeBackgroundColor" data-color="bg2"></button>
-							<button type="button" class="changeBackgroundColor selected" data-color="bg1"></button>
-							<button type="button" class="changeBackgroundColor" data-color="bg3"></button>
-							<button type="button" class="changeBackgroundColor" data-color="dark"></button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="custom-toggle">
-				<i class="flaticon-settings"></i>
-			</div>
-		</div>
 		<!-- End Custom template -->
 	</div>
 	<!--   Core JS Files   -->
@@ -134,8 +69,8 @@
 	<!-- Chart Circle -->
 	<script src="/backend/assets/js/plugin/chart-circle/circles.min.js"></script>
 
-	<!-- Datatables -->
-	<script src="/backend/assets/js/plugin/datatables/datatables.min.js"></script>
+		{{-- <!-- Datatables -->
+		<script src="/backend/assets/js/plugin/datatables/datatables.min.js"></script> --}}
 
 	<!-- Bootstrap Notify -->
 	<script src="/backend/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
@@ -149,7 +84,7 @@
 
 	<!-- Atlantis JS -->
 	<script src="/backend/assets/js/atlantis.min.js"></script>
-
+	
 	<!-- Atlantis DEMO methods, don't include it in your project! -->
 	<script src="/backend/assets/js/setting-demo.js"></script>
 	<script src="/backend/assets/js/demo.js"></script>
@@ -249,6 +184,116 @@
 		<script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
         <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
         {!! Toastr::message() !!}
+	</script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+	<script src=https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js></script>
+	<script src=https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js></script>  
+	<script>
+		var SITEURL = '{{URL::to('')}}';
+		$(document).ready( function () {
+		  $.ajaxSetup({
+			 headers: {
+				 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			 }
+		 });
+		 $('#laravel_datatable').DataTable({
+				processing: true,
+				serverSide: true,
+				ajax: "{{ route('backend.products.index') }}",
+				columns: [
+						 {data: 'id', name: 'id', 'visible': false},
+						 {data: 'DT_RowIndex', name: 'DT_RowIndex', orderable: false,searchable: false},
+						 {data: 'image', name: 'image',orderable: false,searchable: false},
+						 { data: 'name', name: 'name' },
+						 { data: 'price_origin', name: 'price_origin' },
+						 { data: 'price_sale', name: 'price_sale' },
+						 { data: 'category_id', name: 'category_id' },
+						 { data: 'status', name: 'status' },
+						 {data: 'action', name: 'action', orderable: false},
+					  ],
+			   order: [[0, 'desc']]
+			 });
+		 
+		/*  When user click add user button */
+		   $('#create-new-product').click(function () {
+			   $('#btn-save').val("create-product");
+			   $('#product_id').val('');
+			   $('#productForm').trigger("reset");
+			   $('#productCrudModal').html("Tạo Sản phẩm mới");
+			   $('#ajax-product-modal').modal('show');
+		   });
+		   $('#btn-cancel').click(function() {
+			   $('#ajax-product-modal').modal('hide');
+		   });
+		  
+		  /* When click edit user */
+		   $('body').on('click', '.edit-product', function () {
+			 var product_id = $(this).data('id');
+			 $.get('backend/products' + product_id +'/edit', function (data) {
+				$('#title-error').hide();
+				$('#product_code-error').hide();
+				$('#description-error').hide();
+				$('#productCrudModal').html("Edit Product");
+				$('#btn-save').val("edit-product");
+				$('#ajax-product-modal').modal('show');
+				$('#product_id').val(data.id);
+				$('#title').val(data.title);
+				$('#product_code').val(data.product_code);
+				$('#description').val(data.description);
+			 })
+		  });
+		 
+		   $('body').on('click', '.delete-product', function () {
+		  
+			   var product_id = $(this).data("id");
+				
+			   if(confirm("Are You sure want to delete !")){
+				 $.ajax({
+					 type: "get",
+					 url: "{{ route('backend.products.destroy',1) }}",
+					 success: function (data) {
+					 var oTable = $('#laravel_datatable').dataTable(); 
+					 oTable.fnDraw(false);
+					 },
+					 error: function (data) {
+						 console.log('Error:', data);
+					 }
+				 });
+			   }
+		   }); 
+		   
+		  });
+		  
+	   if ($("#productForm").length > 0) {
+			 $("#productForm").validate({
+		  
+			submitHandler: function(form) {
+		  
+			 var actionType = $('#btn-save').val();
+			 $('#btn-save').html('Sending..');
+			   
+			 $.ajax({
+				 data: $('#productForm').serialize(),
+				 url:  "{{ 'backend.products.store'}}",
+				 type: "POST",
+				 dataType: 'json',
+				 success: function (data) {
+		  
+					 $('#productForm').trigger("reset");
+					 $('#ajax-product-modal').modal('hide');
+					 $('#btn-save').html('Save Changes');
+					 var oTable = $('#laravel_datatable').dataTable();
+					 oTable.fnDraw(false);
+					   
+				 },
+				 error: function (data) {
+					 console.log('Error:', data);
+					 $('#btn-save').html('Save Changes');
+				 }
+			 });
+		   }
+		 })
+	   }
 	</script>
 </body>
 </html>

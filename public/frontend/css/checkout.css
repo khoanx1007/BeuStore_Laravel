@@ -1,0 +1,35 @@
+*{
+    list-style:outside none none ;
+    margin: 0;
+    padding: 0;
+}
+.linked{
+    background-color: #f3f3f3;
+}
+.message-form{
+    height: 130px;
+    padding: 5px;
+}
+.line{
+    margin-top: 15px;
+    height: 1px;
+    width: 100%;
+    border-bottom: 1.5px solid rgb(197, 196, 196);
+}
+.orderin{
+    background-color: #e8ebef;
+    padding: 20px 30px;
+}
+.buycart>button{
+    border: 0px;
+    border-radius: 15px;
+    padding: 9px 15px;
+    background-color: dodgerblue;
+    font-size: 15px;
+    text-decoration: none !important;
+    cursor: pointer;
+    color: white;
+}
+.buycart>button:hover{
+    opacity: 0.9;
+}

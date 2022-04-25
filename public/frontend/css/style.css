@@ -1,4 +1,3 @@
-
 *{
     list-style: none;
     margin:0;
@@ -6,26 +5,6 @@
     font-family: Noto Sans;
     box-sizing: border-box;
 }
-.efecto {
-    height: 35px;
-    width: 35px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    position: relative;
-    border: 1px solid dodgerblue;
-      }
-  
-  @keyframes bo {
-    to {
-      transform: scale(1.7);
-      opacity: 0;
-    }
-  }
-a:hover {
-    text-decoration: none !important;
-  }
 .banner{
     font-size: 15px;
 }
@@ -43,47 +22,6 @@ a:hover {
     right: 0;
     left: 0;
     
-}
-.tag-label{
-    
-}
-.acoask{
-    color: black !important; 
-    position: relative;
-    cursor: pointer;
-    z-index: 1000;
-}
-.acoanswer{
-    position: absolute;
-    right:-60px;
-    top:5px;
-    text-align: left;
-    z-index: 1000;
-    border-left:1px solid black ;
-    background-color: white;
-    display: none;
-    color: black;
-}
-.acoask:hover {
-    opacity: 0.9;
-}
-.acoask::before {
-    content: '';
-    vertical-align: middle;
-    float: right;
-    border-top: 8px solid black;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    transform: rotate(0);
-    transition: all 0.5s;
-    margin-top: 8px;
-    margin-left: 2px;
-}
-.active.acoask::before {
-    transform: rotate(-90deg);
-}
-.not-active.acoask::before {
-    transform: rotate(0deg);
 }
 .header-list-item{
     position: relative;
@@ -159,7 +97,6 @@ a:hover {
     text-decoration: none !important;
 }
 .navi>li{
-    display: inline;
     font-family: Noto sans;
     position: relative !important;
 }
@@ -196,9 +133,6 @@ a:hover {
 .brand-img>img:hover{
     opacity: 1;
     transition: 0.5s;
-}
-.blog{
-    border-top:2px solid black ;
 }
 .listcate{
     position: absolute;
@@ -272,18 +206,6 @@ color: white;
     font-size: 14px;
     height: 35px;
     padding: 0 75px 0 23px;
-}
-#searching2{
-    border: 1px solid #e4e4e4 !important;
-    font-size: 14px;
-    height: 35px;
-    right: 10%;
-    z-index: 1000;
-    position: absolute !important;
-    padding: 0 75px 0 23px;
-}
-#searching2:hover{
-    border: 1px solid #e4e4e4 !important;
 }
 #submit{
     border: none;
@@ -511,8 +433,41 @@ color: white;
 .product-box2 {
     width: 256px;
 }
+.label-hot{
+    top: 5px;
+    left: 5px;
+    color: #fff;
+    background: #dc0f0f;
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 14px;
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+    font-weight: bold;
+    cursor: pointer;
+}
 .lastest-news{
     padding: 50px 0px;
+}
+.label-new{
+    top: 5px;
+    left: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    background: dodgerblue;
+    font-size: 14px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 14px;
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+    cursor: pointer;
+    font-weight: bold;
 }
 .action_link {
     padding-top: 10px;

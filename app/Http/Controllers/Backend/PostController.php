@@ -182,7 +182,7 @@ class PostController extends Controller
         $post->tags()->sync($tags);
         $post->category_id = $category_id;
         $post->save();
-        Toastr::success('Tạo bài viết thành công','Thành công');
+        Toastr::success('Cập nhật bài viết thành công','Thành công');
         return redirect()->route('backend.posts.index');
     }
     public function destroy(Request $request,$id)

@@ -47,22 +47,36 @@
 }
 .cate-top_img{
     width: 40%;
-    position: relative;
-}
-.tag-label{
-    top: 0px;
-    left: 2px;
-    text-align: center;
-    display: block;
-    position: absolute;
 }
 .cate-des{
     width: 60%;
-    padding-left: 25px;
+    padding-left: 10px;
+    border-bottom: 1px solid black;
+}
+.cate-top2{
+    width: 100%;
+    float: left;
+    margin: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cate-top2_img{
+    width: 100%;
+}
+.cate2-des{
+    padding-left: 10px;
+    width: 100%;    
 }
 .news{
     display: flex;
     align-items: flex-start;
+}
+blockquote{
+    background: whitesmoke;
+    padding:15px 25px;
+    margin-left: 25px;
+    border-left: 5px solid dodgerblue;
 }
 .bytime{
     padding-right: 20px;
@@ -84,7 +98,7 @@
     
 }
 .pagi-bot>ul>li>a{
-    text-decoration: none !important;
+    text-decoration: none;
     color: black;
 }
 .pagi-bot>ul>li>a:hover{
@@ -92,6 +106,52 @@
     color: black;
     color: white !important;
 }
+.tag-share{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+.social{
+    font-size: 20pxx;
+}
+.aele{
+    text-decoration: none !important;
+    color: black;
+    cursor: pointer;
+}
+.aele:hover{
+    color: dodgerblue !important;
+}
+.cmt-rep{
+    padding-left: 120px;
+    margin: 30px 0px;
+}
+.message-form{
+    height: 150px;
+    padding:10px;
+}
+.back-to-top {
+    position:fixed;
+    right: 20px;
+    display: none ;
+    bottom:100px;
+    width: 40px;
+    height:40px;
+    border-radius: 50%;
+    background-color:dodgerblue;
+    display:flex;
+    justify-content:center;
+    text-decoration: none !important;
+    align-items: center;
+    z-index: 100000000;
+    cursor: pointer;
+    color: white;
+   }
+   
+   .back-to-top:hover{
+    opacity: 0.7;
+   }
 @media only screen and (min-width: 768px) and (max-width: 991px){
     .cate-top_img{
         width: 40%;
@@ -110,5 +170,8 @@
         width: 100%;
         padding-left: 10px;
     }
+    .cmt-rep{
+        padding-left: 0px;
+        
+    }
 }
-

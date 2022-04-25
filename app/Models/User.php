@@ -45,6 +45,10 @@ class User extends Authenticatable
         $url = Storage::disk($this->disk)->url($this->image);
         return $url;
     }
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
     public function userInfo(){
         return $this->hasOne(UserInfo::class);
     }

@@ -1,0 +1,37 @@
+*{
+    list-style:outside none none ;
+    margin: 0;
+    padding: 0;
+}
+.linked{
+    background-color: #f3f3f3;
+}
+.fa-truck{
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: #959393;
+}
+.fa-money-bill-alt{
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: #959393;
+}
+.fa-life-ring{
+    font-size: 40px;
+    padding-bottom: 20px;
+    color: #959393;
+}
+.more >a {
+    border: 1px solid #d5d5d5;
+    padding: 8px 12px;
+    line-height: 35px;
+    color: #333;
+    border-radius: 100px;
+    background-color: whitesmoke;
+}
+.more>a:hover {
+    background-color: dodgerblue;
+    color: white !important;
+    text-decoration: none !important;
+    cursor: pointer;
+}

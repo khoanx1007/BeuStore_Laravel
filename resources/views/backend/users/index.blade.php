@@ -2,7 +2,7 @@
 @section('content')
 <div class="page-inner">
   <div class="page-header">
-    <h4 class="page-title">Tables</h4>
+    <h4 class="page-title">Danh sách thành viên</h4>
     <ul class="breadcrumbs">
       <li class="nav-home">
         <a href="#">
@@ -13,13 +13,13 @@
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">Tables</a>
+        <a href="#">Thành viên</a>
       </li>
       <li class="separator">
         <i class="flaticon-right-arrow"></i>
       </li>
       <li class="nav-item">
-        <a href="#">Basic Tables</a>
+        <a href="#">Danh sách thành viên</a>
       </li>
     </ul>
   </div>
@@ -27,7 +27,7 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <div class="card-title">Table Head States</div>
+          <div class="card-title">Danh sách thành viên</div>
         </div>
         <div class="card-body">
           <table class="table table-head-bg-primary">
@@ -46,18 +46,17 @@
               <tr>
                 <td>
                 @if (!empty($user->image))
-                  <img src="{{ $user->my_image }}" width="100px">   
+                  <div class="avatar-sm">
+                    <img src="{{ $user->my_image }}" class="avatar-img rounded-circle"> 
+                  </div>  
                 @endif</td>
                 <td>{{$user->name}}</td>
-                <td>
-                  
-                </td>
                 <td>{{$user->email}}</td>
                 <td><span class="text-success">Chấp thuận</span></td>
                 <td>{{$user->role}}</span></td>
-                <td class="d-flex flex-wrap">
-                  <a href="{{route('backend.users.show',$user->id) }}"  class="btn btn-secondary"><i class="fas fa-eye"></i></a>
-                  <a href="{{route('backend.users.edit',$user->id) }}"  class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                <td class="d-flex flex-wrap align-items-center">
+                  <a href="{{route('backend.users.show',$user->id) }}" ><button class="btn btn-secondary"><i class="fas fa-eye"></i></button></a>
+                  <a href="{{route('backend.users.edit',$user->id) }}"  ><button class="btn btn-primary" ><i class="fas fa-edit"></i></button></a>
                   <form method="POST" action="{{route('backend.users.destroy',$user->id) }}">
                     @csrf
                     @method('DELETE')

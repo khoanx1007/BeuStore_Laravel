@@ -1,38 +1,60 @@
 @extends('backend.layouts.master')
-@section('title')
-Chỉnh sửa danh mục
-@endsection
 @section('content')
-            <div class="card card-dark">
-              <div class="card-header">
-                <h3 class="card-title">Chỉnh sửa danh mục</h3>
+<div class="page-inner">
+  <div class="page-header">
+    <h4 class="page-title">Sửa danh mục</h4>
+    <ul class="breadcrumbs">
+      <li class="nav-home">
+        <a href="#">
+          <i class="flaticon-home"></i>
+        </a>
+      </li>
+      <li class="separator">
+        <i class="flaticon-right-arrow"></i>
+      </li>
+      <li class="nav-item">
+        <a href="#">Danh mục</a>
+      </li>
+      <li class="separator">
+        <i class="flaticon-right-arrow"></i>
+      </li>
+      <li class="nav-item">
+        <a href="#">Sửa danh mục</a>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">Form Elements</div>
+        </div>
+        <form action="{{route('backend.categories.update',$category->id) }}" method="post" role="form" enctype="multipart/form-data" autocomplete="off">
+          @csrf
+          <div class="card-body">
+            <div class="form-group" >
+              <label for="exampleInputFile">Hình ảnh</label>
+              <div class="input-group">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" name="image">
+                  <label class="custom-file-label" for="emxampleInputFile">Chọn Ảnh</label>
+                </div>
               </div>
-              <form action="{{route('backend.categories.update',$category->id) }}" method="post" role="form" enctype="multipart/form-data" autocomplete="off">
-                @csrf
-                @method('PUT')
-                <input type="hidden" name="_method" value="put"/>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label>Tên bài viết</label>
-                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="@error('name'){{ old('name') }}@else{{ $category->name }}  @enderror" id="exampleInputEmail1" placeholder="Enter...">
-                    @error('name')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                  </div>
-                  <div class="form-group">
-                    <label>Mô tả</label>
-                    <textarea id="editor" name="content" class="form-control @error('content') is-invalid @enderror">{{$category->content}}</textarea>
-                    @error('content')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                    @enderror
-                  </div>
-                </div>
-                <!-- /.card-body -->
+            </div>
+            <div class="form-group">
+              <label>Tên Sản phẩm</label>
+              <input type="text" name="name" class="form-control" placeholder="Nhập...">
+            </div>
+          </div>
+          <!-- /.card-body -->
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-success">Sửa</button>
-                  <a href="" class="btn btn-default float-right">Huỷ</a>
-                </div>
-              </form>
-            </div> 
+          <div class="card-action">
+            <button class="btn btn-success">Submit</button>
+            <button class="btn btn-danger">Cancel</button>
+          </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+</div>
 @endsection

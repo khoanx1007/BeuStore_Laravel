@@ -1,7 +1,7 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 <head>
-    <title>@yield('title') - Bếu Blog</title>
+    <title>@yield('title') - ShopABC</title>
     <!-- Google Font: Source Sans Pro --> 
     @yield('css')
 </head> 

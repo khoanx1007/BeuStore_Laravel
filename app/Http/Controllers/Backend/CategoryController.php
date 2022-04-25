@@ -50,12 +50,10 @@ class CategoryController extends Controller
     public function store(Request $request){
         $validated =$request->validate([
             'name' => 'required|unique:categories|max:20',
-            'content' => 'required'
         ]);
         $data = $request->only(['name','content']);
         $category = Category::create([
             'name' => $data['name'],
-            'content'=> $data['content'],
         ]);
         // $request->session()->flash('success','Tạo danh mục thành công');
         Toastr::success('Tạo danh mục thành công','Thành công');
