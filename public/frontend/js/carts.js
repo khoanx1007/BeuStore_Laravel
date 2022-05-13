@@ -6,10 +6,6 @@ $(document).ready(function() {
             value++;
             $(this).parents('.quantity').find('.qty-in').val(value);
         }
-
-    });
-    $('.clc').click(function () {
-        $('.cartitem').css({'display':'none'});
     });
     $('.decre').click(function (e) {
         var decre_value = $(this).parents('.quantity').find('.qty-in').val();
@@ -19,6 +15,10 @@ $(document).ready(function() {
             $(this).parents('.quantity').find('.qty-in').val(value);
         }
     });
+    $('.clc').click(function () {
+        $('.cartitem').css({'display':'none'});
+    });
+    
     jQuery.validator.addMethod("zipocheck", function(value, element) {
         return this.optional(element) || /^[0-9\.\-_]{6,10}$/i.test(value);
     }, "Only number");

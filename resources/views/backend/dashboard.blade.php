@@ -1,4 +1,6 @@
 @extends('backend.layouts.master')
+@section('css')
+@endsection
 @section('content')
 	<div class="panel-header bg-primary-gradient">
 		<div class="page-inner py-5">

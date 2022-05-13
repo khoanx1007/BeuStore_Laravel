@@ -108,13 +108,12 @@ select{
 }
 .loveandpeace{
     line-height: 37px;
-    width: 36px;
     text-align: center;
     font-size: 18px;
     display: inline-block;
     background: dodgerblue;
     border-radius: 50%;
-    height: 36px;
+    padding: 10px;
     color: #fff !important;
     margin-left: 30px;
     cursor: pointer;

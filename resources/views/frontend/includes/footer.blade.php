@@ -22,52 +22,51 @@
 						</div>
 				</div>
 				<div class="col-lg-2 col-md-3 pt-2">
-						<h6 class="mb-4 h5 font-weight-bold">INFORMATION</h6>
+						<h6 class="mb-4 h5 font-weight-bold">TẤT CẢ THÔNG TIN</h6>
 						<ul class="list-unstyled ">
-							<li><a href="">Delivery Information </a></li>
-							<li><a href="">Advanced Search</a></li>
-							<li><a href="">Helps &amp; Faqs</a></li>
-							<li><a href="">Store Location </a></li>
-							<li><a href="">Orders &amp; Returns </a></li>
-							<li><a href="">Deliveries </a></li>
-							<li><a href="">Refund &amp; Returns</a></li>
+							<li><a href="">Thông tin giao hàng</a></li>
+							<li><a href="">Tìm kiếm nâng cao</a></li>
+							<li><a href="">Trợ giúp & Câu hỏi thường gặp</a></li>
+							<li><a href="">Vị trí cửa hàng </a></li>
+							<li><a href="">Đơn hàng & Trả hàng </a></li>
+							<li><a href="">Giao hàng </a></li>
+							<li><a href="">Hoàn tiền & trả hàng</a></li>
 						</ul>
 
 				</div>                        
 				<div class="col-lg-2 col-md-3 pt-2">
-						<h6 class="mb-4 h5 font-weight-bold">OUR COMPANY</h6>
+						<h6 class="mb-4 h5 font-weight-bold">CÔNG TY CỦA CHÚNG TÔI</h6>
 						<ul class="list-unstyled ">
-							<li><a href="">Delivery </a></li>
-							<li><a href="">Legal Notice </a></li>
-							<li><a href="">Sitemap</a></li>
-							<li><a href="">Secure payment</a></li>
-							<li><a href="">Blog </a></li>
-							<li><a href="">About us</a></li>
-							<li><a href="">Carrers</a></li>                        
+							<li><a href="">Vận chuyển</a></li>
+							<li><a href="">Thông báo pháp lý</a></li>
+							<li><a href="">Sơ đồ trang web</a></li>
+							<li><a href="">Thanh toán an toàn</a></li>
+							<li><a href="">Blog</a></li>
+							<li><a href="">Về chúng tôi</a></li>
+							<li><a href="">Người vận chuyển</a></li>                        
 						</ul>
 				</div>                        
 				<div class="col-lg-2 col-md-6 pt-2">
-						<h6 class="mb-4 h5 font-weight-bold">MY ACCOUNT</h6>
+						<h6 class="mb-4 h5 font-weight-bold">TÀI KHOẢN CỦA TÔI</h6>
 						<ul class="list-unstyled">
-							<li><a href="">Search Terms</a></li>
-							<li><a href="">Advanced Search </a></li>
-							<li><a href="">Helps &amp; Faqs </a></li>
-							<li><a href="">Store Location</a></li>
-							<li><a href="">Orders &amp; Returns</a></li>
-							<li><a href="">Deliveries</a></li>
-							<li><a href="">Refund &amp; Returns</a></li>                                
+							<li><a href="">Cụm từ tìm kiếm</a></li>
+							<li><a href="">Tìm kiếm nâng cao </a></li>
+							<li><a href="">Trợ giúp & Câu hỏi thường gặp</a></li>
+							<li><a href="">Vị trí cửa hàng</a></li>
+							<li><a href="">Đơn hàng & Trả hàng</a></li>
+							<li><a href="">Giao hàng</a></li>
+							<li><a href="">Hoàn tiền & Trả hàng</a></li>                                
 						</ul>
 				</div>                        
 				<div class="col-lg-2 col-md-6 pt-2">
-						<h6 class="mb-3 h5 font-weight-bold">OPENING TIME</h6>
+						<h6 class="mb-3 h5 font-weight-bold">THỜI GIAN MỞ CỬA</h6>
 						<ul class="list-unstyled mb-3">
-							<li><a href="">Mon - Fri : 8AM - 10PM </a></li>
-							<li><a href="">Sat : 9 AM-8PM </a></li>
-							<li><a href="">Suns : 14hPM - 18hPM</a></li>
-							<li><a href="">Mon - Fri : 8AM - 10PM</a></li>
-							<li><a href="">We Work All The Holidays </a></li>
+							<li><a href="">Thứ Hai - Thứ Sáu: 8AM - 10PM</a></li>
+							<li><a href="">Thứ Bảy: 9AM - 8PM</a></li>
+							<li><a href="">Chủ nhật: 2PM - 8PM</a></li>
+							<li><a href="">Chúng tôi làm việc tất cả các ngày lễ </a></li>
 						</ul>      
-						<a href="">Download My App</a>                         
+						<a href="">Tải xuống ứng dụng của tôi</a>                         
 				</div>
 		</div>
 		<div class="row m-0 bgbot2 pt-2 pb-2">

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Tag;
-
+use App\Models\Brand;
 use App\Models\Category;
 use App\Http\Requests\StorePostRequest;
 // use Illuminate\Support\Facades\DB;
@@ -37,21 +37,21 @@ class ProductController extends Controller
         // return view('backend.products.index');
         $products = Product::get();
         
-        if ($request->ajax()) {
-            $data = Product::get();
-            return Datatables::of($data)
-                    ->addIndexColumn()
-                    ->addColumn('action', function($row){
+        // if ($request->ajax()) {
+        //     $data = Product::get();
+        //     return Datatables::of($data)
+        //             ->addIndexColumn()
+        //             ->addColumn('action', function($row){
    
-                           $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm edit-product">Edit</a>';
+        //                    $btn = '<a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Edit" class="edit btn btn-primary btn-sm edit-product">Edit</a>';
    
-                           $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm delete-product">Delete</a>';
+        //                    $btn = $btn.' <a href="javascript:void(0)" data-toggle="tooltip"  data-id="'.$row->id.'" data-original-title="Delete" class="btn btn-danger btn-sm delete-product">Delete</a>';
     
-                            return $btn;
-                    })
-                    ->rawColumns(['action'])
-                    ->make(true);
-        }
+        //                     return $btn;
+        //             })
+        //             ->rawColumns(['action'])
+        //             ->make(true);
+        // }
       
         return view('backend.products.index',compact('products'));
     }
@@ -62,7 +62,14 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('backend.products.create');
+        $tags=Tag::get();
+        $categories=Category::get();
+        $brands=Brand::get();
+        return view('backend.products.create',[
+            'tags' => $tags,
+            'categories' => $categories,
+            'brands' => $brands
+        ]);
     }
 
     /**
@@ -73,9 +80,10 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
         $tags = $request->get('tags');
-        $category = $request->get('category_id');
+        $brand = $request->get('brand');
+        $categories=$request->get('categories');
+        $data = $request->all();
         $product = new Product();
         if($request->hasFile('image')){
             $disk='public';
@@ -83,15 +91,15 @@ class ProductController extends Controller
             $product->disk=$disk;
             $product->image=$path;   
         }
-        $category_id = $request->get('category');
         $product->name = $data['name'];
         $product->price_origin = $data['price_origin'];
         $product->price_sale = $data['price_sale'];
-        $product->category_id = $data['category_id'];
         $product->description = $data['description'];
         $product->status = '1';
-        // $product->tags()->sync($tags);
+        $product->brand_id = $brand;
         $product->save();
+        $product->tags()->attach($tags);
+        $product->categories()->attach($categories);
         Toastr::success('Tạo bài viết thành công','Thành công');
         return redirect()->route('backend.products.index');
         // $productId = $request->product_id;
@@ -114,10 +122,6 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -127,8 +131,14 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $tags=Tag::get();
+        $categories=Category::get();
+        $brands=Brand::get();
         return view('backend.products.edit')->with([
             'product'=>$product,
+            'tags' => $tags,
+            'categories' => $categories,
+            'brands' => $brands,           
         ]);;
     }
 
@@ -143,20 +153,22 @@ class ProductController extends Controller
     {
         $data = $request->all();
         $tags = $request->get('tags');
+        $brand = $request->get('brand');
+        $categories = $request->get('categories');
         if($request->hasFile('image')){
             $disk='public';
             $path= $request->file('image')->store('images',$disk);
             $product->disk=$disk;
             $product->image=$path;   
         }
-        // $category_id = $request->get('category');
         $product->name = $data['name'];
         $product->price_origin = $data['price_origin'];
         $product->price_sale = $data['price_sale'];
-        $product->category_id = $data['category_id'];
+        $product->description = $data['description'];
         $product->status = '1';
-        // $product->tags()->sync($tags);
-        // $product->category_id = $category_id;
+        $product->brand_id = $brand;
+        $product->tags()->sync($tags);
+        $product->categories()->sync($categories);
         $product->save();
         Toastr::success('Cập nhật bài viết thành công','Thành công');
         return redirect()->route('backend.products.index');

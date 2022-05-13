@@ -67,7 +67,6 @@ Danh sách danh mục
                         <th>ID</th>
                         <th>Tên danh mục</th>
                         <th>Ngày tạo</th>
-                        <th>Thao tác</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -78,15 +77,6 @@ Danh sách danh mục
                           <p class="text-dark">Slug: {{$category->slug}}</p>
                           </td>
                           <td>{{$category->created_at}}</td>
-                          <td class="d-flex flex-wrap">
-                            <a href="{{route('backend.categories.edit',$category->id) }}">
-                              <button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>
-                            <form method="POST" action="{{route('backend.categories.destroy',$category->id) }}">
-                              @csrf
-                              @method('DELETE')
-                              <button  class="btn btn-danger"><i class="fas fa-trash"></i></button>  
-                            </form>                         
-                          </td>
                         </tr>
                       @endforeach
                     </tbody>

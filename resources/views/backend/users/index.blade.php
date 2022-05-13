@@ -36,8 +36,8 @@
                 <th scope="col">Người dùng</th>
                 <th scope="col">Tên</th>
                 <th scope="col">Email</th>
-                <th scope="col">Role</th>
                 <th scope="col">Tình trạng</th>
+                <th scope="col">Role</th>
                 <th scope="col">Thao tác</th>
               </tr>
             </thead>

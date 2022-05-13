@@ -48,6 +48,14 @@ Tạo sản phẩm
               <label>Tên Sản phẩm</label>
               <input type="text" name="name" class="form-control" placeholder="Nhập...">
             </div>
+            <div class="form-group" >
+              <label>Game</label>
+              <select class="form-control" name="brand">
+                  @foreach ($brands as $brand)
+                    <option value="{{$brand->id}}">{{$brand->name}}</option>
+                  @endforeach
+              </select>
+            </div>
             <div class="form-group">
                 <label>Giá gốc</label>
                 <input type="text" name="price_origin" class="form-control" value="" placeholder="Nhập...">
@@ -57,13 +65,31 @@ Tạo sản phẩm
                 <input type="text" name="price_sale" class="form-control" value="" placeholder="Nhập...">
             </div>
             <div class="form-group">
-                <label>Mô tả</label>
-                <input type="text" name="description" class="form-control" value="" placeholder="Nhập...">
+                <label for="comment">Mô tả</label>
+                <input type="text" name="description" class="form-control" id="comment" rows="5" value="" placeholder="Nhập..."></textarea>
             </div>
-            <div class="form-group">
-                <label>Danh mục</label>
-                <input type="text" name="category_id" class="form-control" value="" placeholder="Nhập...">
+            <div class="form-group" >
+              <label>Danh mục</label>
+              <select multiple="" class="form-control @error('categories') is-invalid @enderror" id="exampleFormControlSelect2" name="categories[]">
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}">{{$category->name}}</option>
+                @endforeach
+              </select>
+              @error('categories')
+              <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
+            <div class="form-group" >
+                  <label for="exampleFormControlSelect2">Tags</label>
+                  <select multiple="" class="form-control @error('tags') is-invalid @enderror" id="exampleFormControlSelect2" name="tags[]">
+                    @foreach ($tags as $item)
+                    <option value="{{$item->id}}">{{$item->name}}</option>
+                    @endforeach
+                  </select>
+                  @error('tags')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                  @enderror
+            </div> 
           </div>
           <!-- /.card-body -->
 

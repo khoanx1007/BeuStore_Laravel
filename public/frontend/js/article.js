@@ -1,21 +1,5 @@
 $(document).ready(function() {
-    $('.incre').click(function (e) {
-        var incre_value = $(this).parents('.quantity').find('.qty-in').val();
-        var value = parseInt(incre_value);
-        if(value<999){
-            value++;
-            $(this).parents('.quantity').find('.qty-in').val(value);
-        }
 
-    });
-    $('.decre').click(function (e) {
-        var decre_value = $(this).parents('.quantity').find('.qty-in').val();
-        var value = parseInt(decre_value);
-        if(value>1){
-            value--;
-            $(this).parents('.quantity').find('.qty-in').val(value);
-        }
-    });
     $('.productimg-bot').owlCarousel({
         autoplay:false,
         loop:false,

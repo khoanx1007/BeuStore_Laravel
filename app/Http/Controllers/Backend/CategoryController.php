@@ -18,7 +18,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('id','desc')->get();
+        $categories = Category::get();
         return view('backend.categories.index')->with([
             'categories'=>$categories
         ]);

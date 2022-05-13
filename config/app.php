@@ -163,6 +163,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        
 
         /*
          * Package Service Providers...
@@ -177,8 +178,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
-        
-
+        App\Providers\PermissionsServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
+        Brian2694\Toastr\ToastrServiceProvider::class,
     ],
 
     /*
@@ -194,6 +197,8 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+        'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
     ])->toArray(),
     
     

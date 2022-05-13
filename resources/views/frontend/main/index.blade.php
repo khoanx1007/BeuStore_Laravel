@@ -1,6 +1,5 @@
 @extends('frontend.layouts.client')
 @section('content')
-<div>
 	<div class="banner-top">
         <div class="bannerslide owl-theme owl-carousel m-0 mt-5">
             <div class="img-bg">
@@ -75,123 +74,16 @@
     </div>
     <div class="category-home" >
         <div class="container">
-            <div class="row mb-4">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
-                   <div class="category-home_text">
-                       <h3>Top Categories</h3>
-                   </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
-                    <div class="more-category">
-                        <a href="shop.html">
-                            More Categories
-                            <i class="fas fa-angle-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="list-category mb-4" data-aos="fade-up">
-                <div class="category-product bg-white">
-                    <div class="cate-product_text text-dark">
-                        <h6 class="font-weight-bold">God of War 4 GOTY</h6>
-                        <p class="text-danger">Out of Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster1.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">Red Dead Redemption 2</h6>
-                        <p>In Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster2.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white ">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">Sekiro: Shadow Die Twice</h6>
-                        <p class="text-danger">Out of Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster3.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white ">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">The Last Of Us 2</h6>
-                        <p>In Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster4.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white ">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">Ghost Of Tsushima</h6>
-                        <p>In Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster5.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white ">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">Legend Of Zelda: BOTW</h6>
-                        <p class="text-danger">Out of Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster6.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white ">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">The Witcher 3: Wild Hunt</h6>
-                        <p>In Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster7.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white ">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">Detroit: Become Human</h6>
-                        <p>In Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster8.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white ">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">Marvel SpiderMan</h6>
-                        <p class="text-danger">Out of Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster9.jpg">
-                    </div>
-                </div>
-                <div class="category-product bg-white ">
-                    <div class="cate-product_text text-dark" >
-                        <h6 class="font-weight-bold">Cyperpunk 2077</h6>
-                        <p>In Stock</p>
-                    </div>
-                    <div class="cate-product_img" >
-                        <img class="product-img" src="frontend/img/poster10.jpg">
-                    </div>
-                </div>
-            </div>
             <div class="row dark">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-12">
                     <div class="category-home-next_text">
-                   <h3>Hot Categories</h3>
+                   <h3>Danh mục game</h3>
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6 col-12">
                     <div class="category-home-next_list">
                         <ul class="d-flex pt-2">
-                            <li class="PC  blue" >PC</li>
+                            <li class="PC blue" >PC</li>
                             <li class="Console" >Console</li>
                             <li class="Switch" >Switch</li>
                         </ul>
@@ -200,745 +92,214 @@
             </div>
             <div class="product-pc pb-5"> 
                 <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a>
-                                        <img class="card-img-top" src="frontend/img/bg1.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
+                    @foreach ($categories_pc as $category )
+                        @foreach ($category->products2 as $product )
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                                <div class="product-box" >
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <a>
+                                                <img class="card-img-top" src="{{ $product->my_image }}">
+                                            </a>
                                         </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Ghost Of Tsushima</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
+                                        <div class="tag-label">
+                                            @foreach ($product->tags as $tag)
+                                                <div class="badge p-2
+                                                @if ($tag->name == "Hot")
+                                                    badge-danger
+                                                @elseif ($tag->name == "Mới")
+                                                    badge-info
+                                                @elseif ($tag->name ==  "Yêu thích")
+                                                    badge-success       
+                                                @else
+                                                    badge-warning
+                                                @endif"> 
+                                                    {{ $tag->name }}
+                                                </div> 
+                                            @endforeach
+                                        </div>
+                                        <div class="card-block d-flex flex-column align-items-center"> 
+                                                <div class="star-icon mt-2">
+                                                <label for="rating1" class="fa fa-star"></label>
+                                                <label for="rating2" class="fa fa-star"></label>
+                                                <label for="rating3" class="fa fa-star"></label>
+                                                <label for="rating4" class="fa fa-star"></label>
+                                                <label for="rating5" class="fa fa-star"></label>
+                                                </div>
+                                            <span class="font">
+                                            <form class="d-flex flex-column align-items-center">
+                                                @csrf
+                                                <input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
+                                                <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
+                                                <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
+                                                </span>
+                                                <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                                <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
+                                            </form>
+                                            {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
+                                                @csrf
+                                                <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
+                                            </form> --}}
+                                            
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg2.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Detroit: Become Human</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$49.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg3.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">God Of War 4</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg4.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Red Dead Redemption 2</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg5.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Resident Evil 2: REMAKE</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg6.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Horizon: Zero Dawn</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg8.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Far Cry 5</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$39.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg10.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Grand Thief Auto V</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$19.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endforeach
                 </div>
             </div>
             <div class="product-console pb-5">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg1.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
+                    @foreach ($categories_console as $category )
+                        @foreach ($category->products2 as $product )
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                                <div class="product-box" >
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <a>
+                                                <img class="card-img-top" src="{{ $product->my_image }}">
+                                            </a>
                                         </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Ghost Of Tsushima</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
+                                        <div class="tag-label">
+                                            @foreach ($product->tags as $tag)
+                                                <div class="badge p-2
+                                                @if ($tag->name == "Hot")
+                                                    badge-danger
+                                                @elseif ($tag->name == "Mới")
+                                                    badge-info
+                                                @elseif ($tag->name ==  "Yêu thích")
+                                                    badge-success       
+                                                @else
+                                                    badge-warning
+                                                @endif"> 
+                                                    {{ $tag->name }}
+                                                </div> 
+                                            @endforeach
+                                        </div>
+                                        <div class="card-block d-flex flex-column align-items-center"> 
+                                                <div class="star-icon mt-2">
+                                                <label for="rating1" class="fa fa-star"></label>
+                                                <label for="rating2" class="fa fa-star"></label>
+                                                <label for="rating3" class="fa fa-star"></label>
+                                                <label for="rating4" class="fa fa-star"></label>
+                                                <label for="rating5" class="fa fa-star"></label>
+                                                </div>
+                                            <span class="font">
+                                            <form class="d-flex flex-column align-items-center">
+                                                @csrf
+                                                <input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
+                                                <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
+                                                <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
+                                                </span>
+                                                <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                                <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
+                                            </form>
+                                            {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
+                                                @csrf
+                                                <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
+                                            </form> --}}
+                                            
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg3.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">God Of War 4</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg4.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Red Dead Redemption 2</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg5.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Resident Evil 2: REMAKE</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg6.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Horizon: Zero Dawn</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg12.jpg">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Day's Gone</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endforeach
                 </div>
             </div>
             <div class="product-switch pb-5">
                 <div class="row">
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg9.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
+                    @foreach ($categories_switch  as $category )
+                        @foreach ($category->products2 as $product )
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+                                <div class="product-box" >
+                                    <div class="card">
+                                        <div class="card-img">
+                                            <a>
+                                                <img class="card-img-top" src="{{ $product->my_image }}">
+                                            </a>
+                                        </div>
+                                        <div class="tag-label">
+                                            @foreach ($product->tags as $tag)
+                                                <div class="badge p-2
+                                                @if ($tag->name == "Hot")
+                                                    badge-danger
+                                                @elseif ($tag->name == "Mới")
+                                                    badge-info
+                                                @elseif ($tag->name ==  "Yêu thích")
+                                                    badge-success       
+                                                @else
+                                                    badge-warning
+                                                @endif"> 
+                                                    {{ $tag->name }}
+                                                </div> 
+                                            @endforeach
+                                        </div>
+                                        <div class="card-block d-flex flex-column align-items-center"> 
+                                                <div class="star-icon mt-2">
+                                                <label for="rating1" class="fa fa-star"></label>
+                                                <label for="rating2" class="fa fa-star"></label>
+                                                <label for="rating3" class="fa fa-star"></label>
+                                                <label for="rating4" class="fa fa-star"></label>
+                                                <label for="rating5" class="fa fa-star"></label>
+                                                </div>
+                                            <span class="font">
+                                            <form class="d-flex flex-column align-items-center">
+                                                @csrf
+                                                <input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
+                                                <input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
+                                                <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
+                                                <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
+                                                </span>
+                                                <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                                <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
+                                            </form>
+                                            {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
+                                                @csrf
+                                                <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
+                                            </form> --}}
+                                            
+                                        </div>
+                                    </div><div class="card-block d-flex flex-column align-items-center"> 
                                         <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
+                                        <label for="rating1" class="fa fa-star"></label>
+                                        <label for="rating2" class="fa fa-star"></label>
+                                        <label for="rating3" class="fa fa-star"></label>
+                                        <label for="rating4" class="fa fa-star"></label>
+                                        <label for="rating5" class="fa fa-star"></label>
                                         </div>
                                     <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Legend of Zelda: BOTW</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
+                                    <form class="d-flex flex-column align-items-center">
+                                        @csrf
+                                        <input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
+                                        <input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
+                                        <input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
+                                        <input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
+                                        <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
+                                        <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
+                                        </span>
+                                        <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                        <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
+                                    </form>
+                                    {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
+                                        @csrf
+                                        <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
+                                    </form> --}}
+                                    
+                                </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg11.png">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Super Smash Bros: Ultimate</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                        <div class="product-box" >
-                            <div class="card">
-                                <div class="card-img">
-                                    <a href="">
-                                        <img class="card-img-top" src="frontend/img/bg13.jpg">
-                                    </a>
-                                </div>
-                                <div>
-                                    <span class="label-hot">HOT</span>
-                                </div>
-                                <div id="link-action" class="action_link animate__animated ">
-                                    <ul>
-                                        <li>
-                                            <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span ><i class="fas fa-heart"></i></span></a>
-                                        </li>
-                                        <li>
-                                            <a><span><i class="far fa-eye"></i></span></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                          <label for="rating1" class="fa fa-star"></label>
-                                          <label for="rating2" class="fa fa-star"></label>
-                                          <label for="rating3" class="fa fa-star"></label>
-                                          <label for="rating4" class="fa fa-star"></label>
-                                          <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                       <a class="infocard font-weight-bold" href="shop-details.html">Animal Crossing: New Horizon</a>
-                                    </span>
-                                    <span class="font-weight-bolder">$59.99</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
+                    @endforeach
                 </div>
             </div>
         </div>  
@@ -966,7 +327,7 @@
             <div class="row mb-3 ">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-12">
                    <div class="category-home_text">
-                       <h3>New Products</h3>
+                       <h3>Game mới</h3>
                    </div>
                 </div>
                 <div class="col-xl-6 col-md-6 col-12">
@@ -976,390 +337,51 @@
                 </div>
             </div>
             <div data-aos="fade-up" class="productnew-box row m-0 owl-theme owl-carousel border border-bottom-0 border-right-0 border-left-0">
-                <div class="col-12 p-0">
-                    <div class="product-box" >
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="">
-                                    <img class="card-img-top" src="frontend/img/new1.jpg">
-                                </a>
-                            </div>
-                            <div>
-                                <span class="label-new">NEW</span>
-                            </div>
-                            <div id="link-action" class="action_link animate__animated ">
-                                <ul>
-                                    <li>
-                                        <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span ><i class="fas fa-heart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="far fa-eye"></i></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-block d-flex flex-column align-items-center"> 
-                                    <div class="star-icon mt-2">
-                                      <input type="radio" name="rating1" id="rating1">
-                                      <label for="rating1" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating2">
-                                      <label for="rating2" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating3">
-                                      <label for="rating3" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating4">
-                                      <label for="rating4" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating5">
-                                      <label for="rating5" class="fa fa-star"></label>
+                @foreach ($tags_new as $tag)
+                    @foreach ($tag->products as $product )
+                        <div class="col-12 p-0">
+                            <div class="product-box" >
+                                <div class="card">
+                                    <div class="card-img">
+                                        <a href="">
+                                            <img class="card-img-top" src="{{ $product->my_image }}">
+                                        </a>
                                     </div>
-                                <span class="font">
-                                   <a class="infocard font-weight-bold" href="shop-details.html">Battlefield 2042</a>
-                                </span>
-                                <span class="font-weight-bolder">$69.99</span>
+                                    <div>
+                                        <span class="tag-label p-2 badge badge-primary">Mới</span>
+                                    </div>
+                                    <div class="card-block d-flex flex-column align-items-center"> 
+                                        <div class="star-icon mt-2">
+                                        <label for="rating1" class="fa fa-star"></label>
+                                        <label for="rating2" class="fa fa-star"></label>
+                                        <label for="rating3" class="fa fa-star"></label>
+                                        <label for="rating4" class="fa fa-star"></label>
+                                        <label for="rating5" class="fa fa-star"></label>
+                                        </div>
+                                    <span class="font">
+                                    <form class="d-flex flex-column align-items-center">
+                                        @csrf
+                                        <input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
+                                        <input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
+                                        <input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
+                                        <input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
+                                        <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
+                                        <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
+                                        </span>
+                                        <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                        <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
+                                    </form>
+                                    {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
+                                        @csrf
+                                        <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
+                                    </form> --}}
+                                    
+                                </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-12 p-0">
-                    <div class="product-box" >
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="">
-                                    <img class="card-img-top" src="frontend/img/new2.jpg">
-                                </a>
-                            </div>
-                            <div>
-                                <span class="label-new">NEW</span>
-                            </div>
-                            <div id="link-action" class="action_link animate__animated ">
-                                <ul>
-                                    <li>
-                                        <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span ><i class="fas fa-heart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="far fa-eye"></i></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-block d-flex flex-column align-items-center"> 
-                                    <div class="star-icon mt-2">
-                                      <input type="radio" name="rating1" id="rating1">
-                                      <label for="rating1" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating2">
-                                      <label for="rating2" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating3">
-                                      <label for="rating3" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating4">
-                                      <label for="rating4" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating5">
-                                      <label for="rating5" class="fa fa-star"></label>
-                                    </div>
-                                <span class="font">
-                                   <a class="infocard font-weight-bold" href="shop-details.html">Far Cry 6</a>
-                                </span>
-                                <span class="font-weight-bolder">$59.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 p-0">
-                    <div class="product-box" >
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="">
-                                    <img class="card-img-top" src="frontend/img/new3.jpg">
-                                </a>
-                            </div>
-                            <div>
-                                <span class="label-new">NEW</span>
-                            </div>
-                            <div id="link-action" class="action_link animate__animated ">
-                                <ul>
-                                    <li>
-                                        <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span ><i class="fas fa-heart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="far fa-eye"></i></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-block d-flex flex-column align-items-center"> 
-                                    <div class="star-icon mt-2">
-                                      <input type="radio" name="rating1" id="rating1">
-                                      <label for="rating1" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating2">
-                                      <label for="rating2" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating3">
-                                      <label for="rating3" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating4">
-                                      <label for="rating4" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating5">
-                                      <label for="rating5" class="fa fa-star"></label>
-                                    </div>
-                                <span class="font">
-                                   <a class="infocard font-weight-bold" href="shop-details.html">Back 4 Blood</a>
-                                </span>
-                                <span class="font-weight-bolder">$49.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 p-0">
-                    <div class="product-box" >
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="">
-                                    <img class="card-img-top" src="frontend/img/new4.jpg">
-                                </a>
-                            </div>
-                            <div>
-                                <span class="label-new">NEW</span>
-                            </div>
-                            <div id="link-action" class="action_link animate__animated ">
-                                <ul>
-                                    <li>
-                                        <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span ><i class="fas fa-heart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="far fa-eye"></i></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-block d-flex flex-column align-items-center"> 
-                                    <div class="star-icon mt-2">
-                                      <input type="radio" name="rating1" id="rating1">
-                                      <label for="rating1" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating2">
-                                      <label for="rating2" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating3">
-                                      <label for="rating3" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating4">
-                                      <label for="rating4" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating5">
-                                      <label for="rating5" class="fa fa-star"></label>
-                                    </div>
-                                <span class="font">
-                                   <a class="infocard font-weight-bold" href="shop-details.html">Call of Duty: Vanguard</a>
-                                </span>
-                                <span class="font-weight-bolder">$59.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 p-0">
-                    <div class="product-box" >
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="">
-                                    <img class="card-img-top" src="frontend/img/new5.jpg">
-                                </a>
-                            </div>
-                            <div>
-                                <span class="label-new">NEW</span>
-                            </div>
-                            <div id="link-action" class="action_link animate__animated ">
-                                <ul>
-                                    <li>
-                                        <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span ><i class="fas fa-heart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="far fa-eye"></i></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-block d-flex flex-column align-items-center"> 
-                                    <div class="star-icon mt-2">
-                                      <input type="radio" name="rating1" id="rating1">
-                                      <label for="rating1" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating2">
-                                      <label for="rating2" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating3">
-                                      <label for="rating3" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating4">
-                                      <label for="rating4" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating5">
-                                      <label for="rating5" class="fa fa-star"></label>
-                                    </div>
-                                <span class="font">
-                                   <a class="infocard font-weight-bold" href="shop-details.html">Kena: Bridge of Spirits</a>
-                                </span>
-                                <span class="font-weight-bolder">$59.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 p-0">
-                    <div class="product-box" >
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="">
-                                    <img class="card-img-top" src="frontend/img/new6.jpg">
-                                </a>
-                            </div>
-                            <div>
-                                <span class="label-new">NEW</span>
-                            </div>
-                            <div id="link-action" class="action_link animate__animated ">
-                                <ul>
-                                    <li>
-                                        <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span ><i class="fas fa-heart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="far fa-eye"></i></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-block d-flex flex-column align-items-center"> 
-                                    <div class="star-icon mt-2">
-                                      <input type="radio" name="rating1" id="rating1">
-                                      <label for="rating1" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating2">
-                                      <label for="rating2" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating3">
-                                      <label for="rating3" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating4">
-                                      <label for="rating4" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating5">
-                                      <label for="rating5" class="fa fa-star"></label>
-                                    </div>
-                                <span class="font">
-                                   <a class="infocard font-weight-bold" href="shop-details.html">Fifa 22</a>
-                                </span>
-                                <span class="font-weight-bolder">$59.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 p-0">
-                    <div class="product-box" >
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="">
-                                    <img class="card-img-top" src="frontend/img/new7.jpg">
-                                </a>
-                            </div>
-                            <div>
-                                <span class="label-new">NEW</span>
-                            </div>
-                            <div id="link-action" class="action_link animate__animated ">
-                                <ul>
-                                    <li>
-                                        <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span ><i class="fas fa-heart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="far fa-eye"></i></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-block d-flex flex-column align-items-center"> 
-                                    <div class="star-icon mt-2">
-                                      <input type="radio" name="rating1" id="rating1">
-                                      <label for="rating1" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating2">
-                                      <label for="rating2" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating3">
-                                      <label for="rating3" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating4">
-                                      <label for="rating4" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating5">
-                                      <label for="rating5" class="fa fa-star"></label>
-                                    </div>
-                                <span class="font">
-                                   <a class="infocard font-weight-bold" href="shop-details.html">Life is Strange: True Colors</a>
-                                </span>
-                                <span class="font-weight-bolder">$59.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 p-0">
-                    <div class="product-box" >
-                        <div class="card">
-                            <div class="card-img">
-                                <a href="">
-                                    <img class="card-img-top" src="frontend/img/new8.jpg">
-                                </a>
-                            </div>
-                            <div>
-                                <span class="label-new">NEW</span>
-                            </div>
-                            <div id="link-action" class="action_link animate__animated ">
-                                <ul>
-                                    <li>
-                                        <a href="cart.html"><span><i class="fas fa-shopping-cart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="fas fa-sliders-h"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span ><i class="fas fa-heart"></i></span></a>
-                                    </li>
-                                    <li>
-                                        <a><span><i class="far fa-eye"></i></span></a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-block d-flex flex-column align-items-center"> 
-                                    <div class="star-icon mt-2">
-                                      <input type="radio" name="rating1" id="rating1">
-                                      <label for="rating1" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating2">
-                                      <label for="rating2" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating3">
-                                      <label for="rating3" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating4">
-                                      <label for="rating4" class="fa fa-star"></label>
-                                      <input type="radio" name="rating1" id="rating5">
-                                      <label for="rating5" class="fa fa-star"></label>
-                                    </div>
-                                <span class="font">
-                                   <a class="infocard font-weight-bold" href="shop-details.html">Resident Evil 8: Village</a>
-                                </span>
-                                <span class="font-weight-bolder">$59.99</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endforeach
             </div>
         </div>
     </div>
@@ -1506,23 +528,6 @@
             </div>
         </div>
     </div>
-    <div class="subcriber">
-        <div class="container-fluid">
-            <div class="row d-flex flex-column align-items-center sub_box">
-                <div class="col-6 text-center text-white" >
-                    <span class="subtoour">Subscribe to Our Newsletter</span>
-                    <p class="font-weight-bold">_____________</p>
-                    <div class="alert p-2 alert-success rounded mb-2">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                      </div>
-                    <form role="form" action="" name="registration" class="text-center d-flex flex-column align-items-end" class="formsub">
-                        <input type="email" placeholder="Enter email" class="form-control" name="email">
-                        <button type="submit" class="border-0 bg-success text-white subbut">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="logo-brand mt-5" data-aos="fade-up">
         <div class="container">
             <div class="row">
@@ -1581,87 +586,4 @@
             </div>
         </div>
     </div>
-    <div class="footer mt-5">
-        <div class="container p-0">
-            <div class="row m-0 bgbot d-flex justify-content-center pt-4 pb-4">
-                    <div class="col-lg-4 col-md-6 pt-2 pb-2">
-                            <img src="frontend/img/mylogo.png" class="pb-4 position-relative w-50">
-                            <p class=""><i class="fas fa-home"></i> Van Xuyen, Hoang Van, Hiep Hoa, Bac Giang</p>
-                            <p class=""><i class="fas fa-phone-alt"></i> 0385079001</p>
-                            <p class=""><i class="fas fa-envelope"></i> khoanx1007@gmail.com</p>
-                            <div class="footer-block-icon">
-                                <span class="footer-icon">
-                                    <i class="fab fa-facebook"></i>
-                                   </span>
-                                   <span class="footer-icon">
-                                    <i class="fab fa-twitter"></i>
-                                   </span>
-                                   <span class="footer-icon">
-                                    <i class="fab fa-youtube"></i>
-                                   </span>
-                                   <span class="footer-icon">
-                                    <i class="fab fa-google-plus-g"></i>
-                                </span>
-                            </div>
-                    </div>
-                    <div class="col-lg-2 col-md-3 pt-2">
-                            <h6 class="mb-4 h5 font-weight-bold">INFORMATION</h6>
-                            <ul class="list-unstyled ">
-                                <li><a href="">Delivery Information </a></li>
-                                <li><a href="">Advanced Search</a></li>
-                                <li><a href="">Helps & Faqs</a></li>
-                                <li><a href="">Store Location </a></li>
-                                <li><a href="">Orders & Returns </a></li>
-                                <li><a href="">Deliveries </a></li>
-                                <li><a href="">Refund & Returns</a></li>
-                            </ul>
-
-                    </div>                        
-                    <div class="col-lg-2 col-md-3 pt-2">
-                            <h6 class="mb-4 h5 font-weight-bold">OUR COMPANY</h6>
-                            <ul class="list-unstyled ">
-                                <li><a href="">Delivery </a></li>
-                                <li><a href="">Legal Notice </a></li>
-                                <li><a href="">Sitemap</a></li>
-                                <li><a href="">Secure payment</a></li>
-                                <li><a href="">Blog </a></li>
-                                <li><a href="">About us</a></li>
-                                <li><a href="">Carrers</a></li>                        
-                            </ul>
-                    </div>                        
-                    <div class="col-lg-2 col-md-6 pt-2">
-                            <h6 class="mb-4 h5 font-weight-bold">MY ACCOUNT</h6>
-                            <ul class="list-unstyled">
-                                <li><a href="">Search Terms</a></li>
-                                <li><a href="">Advanced Search </a></li>
-                                <li><a href="">Helps & Faqs </a></li>
-                                <li><a href="">Store Location</a></li>
-                                <li><a href="">Orders & Returns</a></li>
-                                <li><a href="">Deliveries</a></li>
-                                <li><a href="">Refund & Returns</a></li>                                
-                            </ul>
-                    </div>                        
-                    <div class="col-lg-2 col-md-6 pt-2">
-                            <h6 class="mb-3 h5 font-weight-bold">OPENING TIME</h6>
-                            <ul class="list-unstyled mb-3">
-                                <li><a href="">Mon - Fri : 8AM - 10PM </a></li>
-                                <li><a href="">Sat : 9 AM-8PM </a></li>
-                                <li><a href="">Suns : 14hPM - 18hPM</a></li>
-                                <li><a href="">Mon - Fri : 8AM - 10PM</a></li>
-                                <li><a href="">We Work All The Holidays </a></li>
-                            </ul>      
-                            <a href="">Download My App</a>                         
-                    </div>
-            </div>
-            <div class="row m-0 bgbot2 pt-2 pb-2">
-                <div class="col-12 text-center">
-                    <span><i class="far fa-copyright"></i> 2021 <span style="color:dodgerblue;">BeuStore. </span> Made with <i class="fas fa-heart text-danger"></i> by BeuToxic</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-</div>
 @endsection

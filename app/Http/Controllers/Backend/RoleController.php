@@ -17,8 +17,7 @@ class RoleController extends Controller
     {
         $roles=Role::paginate(5);
         return view([
-            'backend.roles.index',
-            'frontend.main.index'
+            'backend.roles.index'
         ])->with([
             'roles'=>$roles
         ]);

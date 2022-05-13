@@ -37,8 +37,13 @@ Cập nhật sản phẩm
           @method('PUT')
           <input type="hidden" name="_method" value="put"/>
           <div class="card-body">
-            <div class="form-group" >
+            <div class="form-group">
               <label for="exampleInputFile">Hình ảnh</label>
+              <p>
+                @if (!empty($product->image))
+                  <img src="{{ $product->my_image }}" style="width:192px;height:108px;">   
+                @endif
+              </p>
               <div class="input-group">
                 <div class="custom-file">
                   <input type="file" class="custom-file-input" name="image">
@@ -50,6 +55,18 @@ Cập nhật sản phẩm
               <label>Tên Sản phẩm</label>
               <input type="text" name="name" class="form-control" value="{{ $product->name }}" placeholder="Nhập...">
             </div>
+            <div class="form-group" >
+              <label>Hãng Game</label>
+              <select class="form-control" name='brand'>
+                  @foreach ($brands as $brand)
+                    <option value="{{$brand->id}}"
+                      @if($product->brand_id == $brand->id) 
+                        selected 
+                      @endif
+                      >{{$brand->name}}</option>
+                  @endforeach
+              </select>
+            </div> 
             <div class="form-group">
                 <label>Giá gốc</label>
                 <input type="text" name="price_origin" class="form-control" value="{{ $product->price_origin }}" placeholder="Nhập...">
@@ -60,12 +77,42 @@ Cập nhật sản phẩm
             </div>
             <div class="form-group">
                 <label>Mô tả</label>
-                <input type="text" name="description" class="form-control" value="{{ $product->description }}" placeholder="Nhập...">
+                <textarea type="text" name="description" class="form-control" id="comment" rows="5" value="{{ $product->description }}" placeholder="Nhập...">{{ $product->description }}</textarea>
             </div>
-            <div class="form-group">
-                <label>Danh mục</label>
-                <input type="text" name="category_id" class="form-control" value="{{ $product->category_id }}" placeholder="Nhập...">
-            </div>
+            <div class="form-group" >
+              <label>Danh mục</label>
+              <select multiple="" class="form-control" name='categories[]'>
+                @foreach ($categories as $item)
+                  @foreach ($product->categories as $product_category)
+                    @php
+                      $selected = "";
+                      if ($product_category->id == $item->id){
+                        $selected = "selected";
+                        break;  
+                      }
+                    @endphp
+                  @endforeach
+                  <option value="{{$item->id}}" {{ $selected }}>{{$item->name}} </option>
+                @endforeach
+              </select>
+          </div>  
+          <div class="form-group">
+                <label>Tags</label>
+                <select multiple="" class="form-control" name='tags[]'>
+                  @foreach ($tags as $item)
+                    @foreach ($product->tags as $product_tag)
+                      @php
+                        $selected = "";
+                        if ($product_tag->id == $item->id){
+                          $selected = "selected";
+                          break;
+                        }
+                      @endphp
+                    @endforeach
+                    <option value="{{$item->id}}" {{ $selected }}>{{$item->name}} </option>
+                  @endforeach
+                </select>
+          </div>  
           </div>
           <!-- /.card-body -->
 

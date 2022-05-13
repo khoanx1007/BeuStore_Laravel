@@ -40,7 +40,7 @@ $(document).ready(function(){
         $(this).addClass('blue')
         $('.product-switch').fadeOut(500);
         $('.product-pc').fadeOut(500);
-        $('.product-console').fadeIn(1000);
+        $('.product-console').fadeIn(500);
     })
     $('.Switch').on('click', function() {
         $('.Console').removeClass('blue');
@@ -48,7 +48,7 @@ $(document).ready(function(){
         $(this).addClass('blue')
         $('.product-console').fadeOut(500);
         $('.product-pc').fadeOut(500);
-        $('.product-switch').fadeIn(1000);
+        $('.product-switch').fadeIn(500);
     })
         
         

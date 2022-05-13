@@ -2,17 +2,14 @@
 <div id="helloworld" class="mb-3">
 	<div class="container">
 		<div class="row">
-			<div class="col-10">
-				<b class="banner text-white">Free Delivery: Take advantage of our time to save event</b>
+			<div class="col-8">
+				<b class="banner text-white">Nhập mã khuyến mại để giảm giá đơn hàng</b>
 			</div>
-			<div class="col-2">
-				<b class="banner-language  text-left text-white font-weight-bold">Select language <i class="fas fa-chevron-down"></i>
-					<ul class="listcate2">
-						<li><a>Vietnamese</a></li>
-						<li><a>English</a></li>
-						<li><a>Spanish</a></li>
-						<li><a>Japanese</a></li>
-					</ul>
+			<div class="col-4">
+				<b class="banner-language  text-left text-white font-weight-bold"><i class="fas fa-phone"></i> +84 38 507 9001</i>
+				</b>
+				&nbsp;
+				<b class="banner-language  text-left text-white font-weight-bold"><i class="fas fa-envelope"></i> Khoanx1007@gmail.com</i>
 				</b>
 			</div>
 		</div>
@@ -21,12 +18,12 @@
 <nav class="navbar navbar-expand-lg header">   
 	<div class="container d-flex align-items-center justify-content-between">
 		<div id="left-1" class="col-xl-3 col-lg-3 col-md-6 col-8 text-left">
-			<a href="index.html"><img src="/frontend/img/mylogo.png" id="logo"></a>
+			<a href="{{ route('frontend.main.index') }}"><img src="/frontend/img/mylogo.png" id="logo"></a>
 		</div>
 		<div class="col-md-6 col-4 tab-content">
 			<div class="d-flex justify-content-end">
 				<div class="header-list-item">
-					<i id="icon-header" class="fas fa-shopping-bag"></i>
+					<a href="#"><i id="icon-header" class="fas fa-shopping-bag"></i></a>
 					<span class="number-icon">
 						9
 					</span>
@@ -38,9 +35,9 @@
 		</div>
 		<div id="right-1" class="col-xl-7 col-lg-7 d-flex justify-content-center">
 			<div class="input-group">
-				<input id="searching" type="text" class="form-control" placeholder="Search Everything">
+				<input id="searching" type="text" class="form-control" placeholder="Tìm kiếm...">
 				<select id="searching2" class="selectpicker">
-					<option>Category</option>
+					<option>Danh mục</option>
 					{{-- @foreach ($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach --}}
@@ -55,13 +52,13 @@
 				<div class="header-list-item" id="hide2">
 					<i id="icon-header" class="far fa-heart"></i>
 					<span class="number-icon">
-						9
+						0
 					</span>
 				</div>
 				<div class="header-list-item">
-					<i id="icon-header" class="fas fa-shopping-bag"></i>
+					<a href="{{ route('frontend.carts.indexajax') }}"><i id="icon-header" class="fas fa-shopping-cart"></i></a>
 					<span class="number-icon">
-						9
+						{{ Cart::count() }}
 					</span>
 				</div>
 			</div>
@@ -75,23 +72,24 @@
 				<div class="category text-white">
 					<span class="cate-click rounded-circle">
 						<i class="align fas fa-align-left"></i>
-						<b>CATEGORIES</b>
+						<b>Theo hãng Game</b>
 					</span>
 				</div>
 				<div class="category-menu">
 					<ul>
-						{{-- @foreach ($categories as $category)
-                                  <li value="{{$category->id}}"><a href="#">{{$category->name}}</a></li>
-                        @endforeach --}}
+						@foreach ($brands as $brand)
+                                  <li value="{{$brand->id}}"><a href="#">{{$brand->name}}</a></li>
+                        @endforeach
 					</ul>
 				</div>
 			</div>
 			<div class="col-xl-6 col-lg-6 mt-1 searchbox text-center">
 				<nav class="d-flex justify-content-center mt-3">
 					<ul class="navi mt-lg-0 mt-2">
-						{{-- @foreach ($menus as $menu )
-							<li><a href="#" class="nav-bar font-weight-bold">{{ $menu->name }}</a></li>
-						@endforeach --}}
+						<li><a href="{{ route('frontend.main.shop') }}" class="nav-bar font-weight-bold">Cửa hàng</a></li>
+						<li><a href="#" class="nav-bar font-weight-bold">Danh mục</a></li>
+						<li><a href="#" class="nav-bar font-weight-bold">Giới thiệu</a></li>
+						<li><a href="#" class="nav-bar font-weight-bold">Q&A</a></li>
 					</ul> 
 				</nav>
 			</div>
@@ -120,7 +118,7 @@
 									<form method="post" action="{{ route('auth.logout') }}">
 										@csrf
 										<button  class="btn bg-white p-1 font-weight-bold text-dark" onclick="this.closet('form').submit(); return false;">
-										  Logout
+										  Đăng Xuất
 										</button>
 									  </form>
 								</div>  	

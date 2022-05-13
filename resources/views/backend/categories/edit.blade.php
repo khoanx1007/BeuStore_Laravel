@@ -32,17 +32,8 @@
         <form action="{{route('backend.categories.update',$category->id) }}" method="post" role="form" enctype="multipart/form-data" autocomplete="off">
           @csrf
           <div class="card-body">
-            <div class="form-group" >
-              <label for="exampleInputFile">Hình ảnh</label>
-              <div class="input-group">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" name="image">
-                  <label class="custom-file-label" for="emxampleInputFile">Chọn Ảnh</label>
-                </div>
-              </div>
-            </div>
             <div class="form-group">
-              <label>Tên Sản phẩm</label>
+              <label>Tên Danh mục</label>
               <input type="text" name="name" class="form-control" placeholder="Nhập...">
             </div>
           </div>

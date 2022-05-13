@@ -19,7 +19,10 @@ class Category extends Model
         $this->attributes['name'] = $name;
         $this->attributes['slug'] = Str::slug($name);
     }
-    public function posts(){
-        return $this->hasMany(Post::class,'category_id');
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
+    public function products2(){
+        return $this->belongsToMany(Product::class);
     }
 }

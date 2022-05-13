@@ -42,6 +42,7 @@ class RegisteredUserController extends Controller
         $user->name = $data['name'];
         $user->email = $data['email'];
         $user->password = $data['password'];
+        $user->role ='Customer';
         $user->save();             
         return redirect('backend/dashboard');
     }

@@ -21,15 +21,14 @@
 	<link rel="stylesheet" href="/backend/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/backend/assets/css/atlantis.min.css">	
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="/backend/assets/css/demo.css">
+	<link rel="stylesheet" href="/backend/assets/css/style.css">
 	{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" /> --}}
 	<link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
-	 
-
-	
+	@yield('css')
 </head>
 <body>
+	@yield('preloader')
 	<div class="wrapper">
 		@include('backend.includes.header')
 
@@ -45,8 +44,8 @@
 		</div>
 		
 		<!-- Custom template | don't include it in your project! -->
-		<!-- End Custom template -->
 	</div>
+	
 	<!--   Core JS Files   -->
 	<script src="/backend/assets/js/core/jquery.3.2.1.min.js"></script>
 	<script src="/backend/assets/js/core/popper.min.js"></script>
@@ -73,7 +72,7 @@
 		<script src="/backend/assets/js/plugin/datatables/datatables.min.js"></script> --}}
 
 	<!-- Bootstrap Notify -->
-	<script src="/backend/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+	{{-- <script src="/backend/assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> --}}
 
 	<!-- jQuery Vector Maps -->
 	<script src="/backend/assets/js/plugin/jqvmap/jquery.vmap.min.js"></script>
