@@ -11,4 +11,7 @@ class District extends Model
     protected $fillable = ['name','type'];
     protected $primaryKey = 'maqh';
     protected $table = 'a_districts';
+    public function ordersinfo(){
+        return $this->hasMany(OrderInfo::class);
+    }
 }

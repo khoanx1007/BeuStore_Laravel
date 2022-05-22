@@ -17,4 +17,7 @@ class Coupon extends Model
         }
         return $name;
     }
+    public function ordersinfo(){
+        return $this->hasMany(OrderInfo::class);
+    }
 }

@@ -11,4 +11,7 @@ class Ward extends Model
     protected $fillable = ['name','type','maqh'];
     protected $primaryKey = 'maxa';
     protected $table = 'a_wards';
+    public function ordersinfo(){
+        return $this->hasMany(OrderInfo::class);
+    }
 }

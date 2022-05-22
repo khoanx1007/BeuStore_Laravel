@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Validation\Rules;
 use Illuminate\Support\Facades\Hash;
+use Toastr;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -44,6 +45,7 @@ class RegisteredUserController extends Controller
         $user->password = $data['password'];
         $user->role ='Customer';
         $user->save();             
-        return redirect('backend/dashboard');
+        Toastr::success('Tạo tài khoản thành công','Thành công');
+        return redirect('/login');
     }
 }

@@ -31,12 +31,12 @@
                                 <i class="fa fa-search search-icon"></i>
                             </button>
                         </div>
-                        <input type="text" placeholder="Search ..." class="form-control">
+                        <input type="text" placeholder="Tìm kiếm..." class="form-control">
                     </div>
                 </form>
             </div>
             <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                <li class="nav-item toggle-nav-search hidden-caret">
+                {{-- <li class="nav-item toggle-nav-search hidden-caret">
                     <a class="nav-link" data-toggle="collapse" href="#search-nav" role="button" aria-expanded="false" aria-controls="search-nav">
                         <i class="fa fa-search"></i>
                     </a>
@@ -221,7 +221,7 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> --}}
                 <li class="nav-item dropdown hidden-caret">
                     <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                         <div class="avatar-sm">
@@ -234,23 +234,21 @@
                                 <div class="user-box">
                                     <div class="avatar-lg"><img src="{{ auth()->user()->my_image }}" alt="image profile" class="avatar-img rounded"></div>
                                     <div class="u-text">
-                                        <h4>{{ auth()->user()->name }}</h4>
-                                        <p class="text-muted">{{ auth()->user()->email }}</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                        <h4>{{ auth()->user()->email }}</h4>
+                                        <p class="text-muted">{{ auth()->user()->email }}</p><a href="profile.html" class="btn btn-xs btn-secondary btn-sm">Thông tin tài khoản</a>
                                     </div>
                                 </div>
                             </li>
                             <li>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">My Profile</a>
-                                <a class="dropdown-item" href="#">My Balance</a>
-                                <a class="dropdown-item" href="#">Inbox</a>
+                                <a class="dropdown-item" href="#">Tải khoản của tôi</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Account Setting</a>
+                                <a class="dropdown-item" href="#">Cài đặt tài khoản</a>
                                 <div class="dropdown-divider"></div>
                                 <form method="post" action="{{ route('auth.logout') }}">
                                     @csrf
                                     <button style="cursor: pointer;" class="dropdown-item" onclick="this.closet('form').submit(); return false;">
-                                        Logout
+                                        Đăng xuất
                                     </button>
                                 </form>
                             </li>

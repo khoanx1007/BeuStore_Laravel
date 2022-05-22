@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdatePostRequest extends FormRequest
+class UpdatePostRequesr extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,12 @@ class UpdatePostRequest extends FormRequest
     public function rules()
     {
         return [    
-            'title' => 'required|min:20|max:255',
-            'content' => 'required',
+            'name' => 'required|unique:products|max:30',
             'tags' => 'required',
-            'description'=>'required'
-            // 'status' => 'required|digits:'
+            'categories' => 'required',
+            'description'=>'required',
+            'price_origin'=>'required',
+            'price_sale'=>'required',
         ];
     }
     public function messages()
@@ -37,17 +38,22 @@ class UpdatePostRequest extends FormRequest
             'digits'=>':attribute không nằm trong danh sách có sẵn',
             'unique' => ':attribute đã tồn tại',
             'required' => ':attribute không được để trống',
-            'min' => ':attribute tiêu đề cần ít nhất 20 kí tự ',
+            'max' => ':attribute không quá 30 ký tự ',
+            'name' => ':attribute không được để trống ',
         ];
     }
     public function attributes()
     {
         return[
             'status'=>'Tình trạng',
-            'title'=>'Tiêu đề',
-            'tags' => 'Nhãn dán',
+            'name'=>'Tên game',
             'content'=>'Nội dung',
-            'description'=>'Mô tả'
+            'tags' => 'Tags',
+            'description'=>'Mô tả',
+            'categories'=>'Danh mục',
+            'price_origin'=>'Giá gốc',
+            'price_sale'=>'Giá sale',
+            'image'=>'Hình ảnh',
         ];
     }
 }

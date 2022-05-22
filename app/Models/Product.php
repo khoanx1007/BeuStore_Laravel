@@ -62,4 +62,7 @@ class Product extends Model
     public function tags2(){
         return $this->hasMany(Tag::class,'product_id');
     }
+    public function comment(){
+        return $this->hasMany(Comment::class);
+    }
 }

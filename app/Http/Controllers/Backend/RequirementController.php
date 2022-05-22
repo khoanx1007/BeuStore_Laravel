@@ -51,17 +51,12 @@ class RequirementController extends Controller
         $product = $request->get('product');
         $data = $request->all();
         $requirement = new Requirement();
-        if($request->hasFile('image')){
-            $disk='public';
-            $path= $request->file('image')->store('images',$disk);
-            $image->disk=$disk;
-            $image->image=$path;   
-        }
         $requirement->product_id = $product;
         $requirement->min_sys = $data['min_sys'];
         $requirement->sug_sys = $data['sug_sys'];
+        $requirement->gameplay = $data['gameplay'];
         $requirement->save();
-        Toastr::success('Chỉnh sửa ảnh thành công','Thành công');
+        Toastr::success('Thêm yêu cầu thành công','Thành công');
         return redirect()->route('backend.requirements.index');
     }
 

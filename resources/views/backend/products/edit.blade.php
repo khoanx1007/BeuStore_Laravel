@@ -53,8 +53,11 @@ Cập nhật sản phẩm
             </div>
             <div class="form-group">
               <label>Tên Sản phẩm</label>
-              <input type="text" name="name" class="form-control" value="{{ $product->name }}" placeholder="Nhập...">
+              <input type="text" name="name" class="form-control" value="@error('name'){{ old('name') }} @else{{ $product->name }}@enderror" placeholder="Nhập...">
             </div>
+            @error('name')
+              <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <div class="form-group" >
               <label>Hãng Game</label>
               <select class="form-control" name='brand'>
@@ -69,17 +72,26 @@ Cập nhật sản phẩm
             </div> 
             <div class="form-group">
                 <label>Giá gốc</label>
-                <input type="text" name="price_origin" class="form-control" value="{{ $product->price_origin }}" placeholder="Nhập...">
+                <input type="text" name="price_origin" class="form-control" value="@error('price_origin'){{ old('price_origin') }} @else{{ $product->price_origin }}@enderror" placeholder="Nhập...">
+                @error('price_origin')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label>Giá Sale</label>
-                <input type="text" name="price_sale" class="form-control" value="{{ $product->price_sale }}" placeholder="Nhập...">
+                <input type="text" name="price_sale" class="form-control" value="@error('price_sale'){{ old('price_sale') }} @else{{ $product->price_sale }}@enderror" placeholder="Nhập...">
+                @error('price_sale')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label>Mô tả</label>
-                <textarea type="text" name="description" class="form-control" id="comment" rows="5" value="{{ $product->description }}" placeholder="Nhập...">{{ $product->description }}</textarea>
+                <textarea type="text" name="description" class="form-control" id="comment" rows="5" value="@error('description'){{ old('description') }} @else {{ $product->description }} @enderror" placeholder="Nhập...">{{ $product->description }}</textarea>
+                @error('description')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
-            <div class="form-group" >
+            <div class="form-group">
               <label>Danh mục</label>
               <select multiple="" class="form-control" name='categories[]'>
                 @foreach ($categories as $item)

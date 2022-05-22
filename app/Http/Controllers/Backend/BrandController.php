@@ -22,13 +22,6 @@ class BrandController extends Controller
             'brands'=>$brands
         ]);
     }
-    // public function index2()
-    // {
-    //     $categories = Category::onlyTrashed()->paginate(3); 
-    //     return view('backend.categories.index2')->with([
-    //         'categories'=>$categories
-    //     ]);
-    // }
 
     /**
      * Show the form for creating a new resource.

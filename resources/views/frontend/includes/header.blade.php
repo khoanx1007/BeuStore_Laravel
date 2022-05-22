@@ -51,15 +51,9 @@
 			<div class="d-flex">
 				<div class="header-list-item" id="hide2">
 					<i id="icon-header" class="far fa-heart"></i>
-					<span class="number-icon">
-						0
-					</span>
 				</div>
 				<div class="header-list-item">
 					<a href="{{ route('frontend.carts.indexajax') }}"><i id="icon-header" class="fas fa-shopping-cart"></i></a>
-					<span class="number-icon">
-						{{ Cart::count() }}
-					</span>
 				</div>
 			</div>
 		</div>

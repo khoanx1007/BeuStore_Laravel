@@ -26,27 +26,28 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="/frontend/login/css/util.css">
 	<link rel="stylesheet" type="text/css" href="/frontend/login/css/main.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 <!--===============================================================================================-->
 @endsection
 @section('content')
 <div class="limiter">
   <div class="container-login100">
     <div class="wrap-login100">
-      <form class="login100-form validate-form" action="{{ route('auth.login') }}" method="POST">
+      <form class="login100-form validate-form" action="{{ route('auth.login.au') }}" method="POST">
         @csrf
         <span class="login100-form-title p-b-43">
           Đăng nhập
         </span>
         <div class="wrap-input100 validate-input">
           <span class="label-input100">Email</span>
-          <input class="input100" type="email" name="email" placeholder="Nhập Email...">
+          <input class="input100" type="email" name="email" value="{{ old('email') }}" placeholder="Nhập Email...">
           <span class="focus-input100"></span>
           @error('email') <div class="alert-validate" data-validate = "{{ $message }}"></div>@enderror
         </div>
 
         <div class="wrap-input100 validate-input">
           <span class="label-input100">Mật khẩu</span>
-          <input class="input100" type="password" name="password" placeholder="********">
+          <input class="input100" type="password" name="password" value="{{ old('password') }}"  placeholder="********">
           <span class="focus-input100"></span>
           @error('password') <div class="alert-validate" data-validate = "{{ $message }}"></div>@enderror
         </div>
@@ -118,6 +119,8 @@
 	<script src="/frontend/login/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 	<script src="/frontend/login/vendor/countdowntime/countdowntime.js"></script>
+  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        {!! Toastr::message() !!}
 <!--===============================================================================================-->
 	{{-- <script src="/frontend/login/js/main.js"></script> --}}
   <script>

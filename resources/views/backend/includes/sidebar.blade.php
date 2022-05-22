@@ -142,10 +142,16 @@
                         </ul>
                     </div> --}}
                 </li>
-                <li class="nav-item">
-                    <a href="widgets.html">
+                <li class="nav-item @if (request()->routeIs('backend.orders.*')) active submenu @endif">
+                    <a href="{{ route('backend.orders.index') }}">
                         <i class="fas fa-newspaper"></i>
                         <p>Đơn hàng</p>
+                    </a>
+                </li>
+                <li class="nav-item @if (request()->routeIs('backend.comments.*')) active submenu @endif">
+                    <a href="{{ route('backend.comments.index') }}">
+                        <i class="fas fa-comment-alt"></i>
+                        <p>Bình luận</p>
                     </a>
                 </li>
                 <li class="nav-section">
@@ -167,11 +173,11 @@
                                     <span class="sub-item">Danh sách</span>
                                 </a>
                             </li>
-                            <li class="@if (request()->routeIs('backend.role.index')) active @endif">
+                            {{-- <li class="@if (request()->routeIs('backend.role.index')) active @endif">
                                 <a href="{{ route('backend.roles.index') }}">
                                     <span class="sub-item">Role</span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </li>

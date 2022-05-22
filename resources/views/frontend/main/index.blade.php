@@ -8,12 +8,12 @@
                     <div class="row m-0 absolute">
                         <div class="col-xl-6 col-lg-6 col-12 pl-xl-5 pl-lg-5 pl-md-5 pl-3">
                             <div class="text-inside text-white ">
-                                <span>A lot of packs for your wallet</span>
+                                <span>Rất nhiều sự lựa chọn</span>
                                 <p>Game of The Year: Full Edition</p>
-                                <h4>God of war, The last of us 2, Sekiro...</h4>
+                                <h4>God of war, Far Cry 6...</h4>
                                 <div class="btn-shop">
-                                    <a href="blog-detail.html">
-                                        Read More
+                                    <a href="{{ route('frontend.main.shop') }}">
+                                        Đọc thêm
                                     </a>
                                 </div>
                             </div>
@@ -27,12 +27,12 @@
                     <div class="row m-0 absolute">
                         <div class="col-xl-6 col-lg-6 col-12 pl-xl-5 pl-lg-5 pl-md-5 pl-3">
                             <div class="text-inside text-white">
-                                <span>10% Sale Off</span>
-                                <p>Games for PC, Console, Switch...</p>
-                                <h4>Prestige and Quality</h4>
+                                <span>Giảm giá 10%</span>
+                                <p>Game dành cho PC, Console, Switch</p>
+                                <h4>Chỉ trong tuẩn này.</h4>
                                 <div class="btn-shop">
-                                    <a href="blog-detail.html">
-                                        Read More
+                                    <a href="{{ route('frontend.main.shop') }}">
+                                        Đọc thêm
                                     </a>
                                 </div>
                             </div>
@@ -49,10 +49,10 @@
                     <div class="bannerb-left text-white">
                         <span>Sony Interactive Entertainment</span>
                         <h1>God of War 4</h1>
-                        <h6>Kratos's adventure with his son to explore the world.</h6>
+                        <h6>Hành trình vĩ đại của 2 cha con nhà Kratos ở vùng đất Bắc Âu</h6>
                         <div class="buy-shop">
-                            <a href="cart.html">
-                                BUY NOW
+                            <a href="{{ route('frontend.main.info',11) }}">
+                                XEM NGAY
                             </a>
                         </div>
                     </div>
@@ -61,10 +61,10 @@
                     <div class="bannerb-right text-white">
                         <span>Rockstar Games</span>
                         <h1>Red Dead Redemption 2</h1>
-                        <h6>Heroic life of Athur Morgan to escape his destiny.</h6>
+                        <h6>Cuộc đời đầy hào dùng của Athur Morgan và hành trình chống lại số phận của anh ấy</h6>
                         <div class="buy-shop">
-                            <a href="cart.html">
-                                BUY NOW
+                            <a href="{{ route('frontend.main.info',18) }}.html">
+                                XEM NGAY
                             </a>
                         </div>
                     </div>
@@ -119,13 +119,6 @@
                                             @endforeach
                                         </div>
                                         <div class="card-block d-flex flex-column align-items-center"> 
-                                                <div class="star-icon mt-2">
-                                                <label for="rating1" class="fa fa-star"></label>
-                                                <label for="rating2" class="fa fa-star"></label>
-                                                <label for="rating3" class="fa fa-star"></label>
-                                                <label for="rating4" class="fa fa-star"></label>
-                                                <label for="rating5" class="fa fa-star"></label>
-                                                </div>
                                             <span class="font">
                                             <form class="d-flex flex-column align-items-center">
                                                 @csrf
@@ -136,7 +129,7 @@
                                                 <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
                                                 <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
                                                 </span>
-                                                <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                                <span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span>
                                                 <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
                                             </form>
                                             {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
@@ -181,13 +174,6 @@
                                             @endforeach
                                         </div>
                                         <div class="card-block d-flex flex-column align-items-center"> 
-                                                <div class="star-icon mt-2">
-                                                <label for="rating1" class="fa fa-star"></label>
-                                                <label for="rating2" class="fa fa-star"></label>
-                                                <label for="rating3" class="fa fa-star"></label>
-                                                <label for="rating4" class="fa fa-star"></label>
-                                                <label for="rating5" class="fa fa-star"></label>
-                                                </div>
                                             <span class="font">
                                             <form class="d-flex flex-column align-items-center">
                                                 @csrf
@@ -198,7 +184,7 @@
                                                 <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
                                                 <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
                                                 </span>
-                                                <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                                <span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span>
                                                 <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
                                             </form>
                                             {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
@@ -243,13 +229,6 @@
                                             @endforeach
                                         </div>
                                         <div class="card-block d-flex flex-column align-items-center"> 
-                                                <div class="star-icon mt-2">
-                                                <label for="rating1" class="fa fa-star"></label>
-                                                <label for="rating2" class="fa fa-star"></label>
-                                                <label for="rating3" class="fa fa-star"></label>
-                                                <label for="rating4" class="fa fa-star"></label>
-                                                <label for="rating5" class="fa fa-star"></label>
-                                                </div>
                                             <span class="font">
                                             <form class="d-flex flex-column align-items-center">
                                                 @csrf
@@ -260,7 +239,7 @@
                                                 <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
                                                 <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
                                                 </span>
-                                                <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                                <span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span>
                                                 <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
                                             </form>
                                             {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
@@ -269,33 +248,12 @@
                                             </form> --}}
                                             
                                         </div>
-                                    </div><div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                        <label for="rating1" class="fa fa-star"></label>
-                                        <label for="rating2" class="fa fa-star"></label>
-                                        <label for="rating3" class="fa fa-star"></label>
-                                        <label for="rating4" class="fa fa-star"></label>
-                                        <label for="rating5" class="fa fa-star"></label>
-                                        </div>
-                                    <span class="font">
-                                    <form class="d-flex flex-column align-items-center">
-                                        @csrf
-                                        <input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
-                                        <input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
-                                        <input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
-                                        <input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
-                                        <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
-                                        <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
-                                        </span>
-                                        <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
-                                        <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
-                                    </form>
+                                    </div>
                                     {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
                                         @csrf
                                         <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
                                     </form> --}}
                                     
-                                </div>
                                 </div>
                             </div>
                         @endforeach
@@ -351,13 +309,6 @@
                                         <span class="tag-label p-2 badge badge-primary">Mới</span>
                                     </div>
                                     <div class="card-block d-flex flex-column align-items-center"> 
-                                        <div class="star-icon mt-2">
-                                        <label for="rating1" class="fa fa-star"></label>
-                                        <label for="rating2" class="fa fa-star"></label>
-                                        <label for="rating3" class="fa fa-star"></label>
-                                        <label for="rating4" class="fa fa-star"></label>
-                                        <label for="rating5" class="fa fa-star"></label>
-                                        </div>
                                     <span class="font">
                                     <form class="d-flex flex-column align-items-center">
                                         @csrf
@@ -368,7 +319,7 @@
                                         <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
                                         <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
                                         </span>
-                                        <span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+                                        <span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span>
                                         <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
                                     </form>
                                     {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
@@ -387,201 +338,33 @@
     </div>
     <div class="mb-5 user-saying">
         <div class="client-block owl-carousel owl-theme">
-            <div class="client-saying1 row m-0 d-flex justify-content-center">
-                <div class="client-text text-center col-lg-6 col-md-8 col-11 text-white d-flex flex-column align-items-center">
-                    <h2 class="p-1">Our Client Say!</h2>
-                    <h1>-------------</h1>
-                    <p class="h5">“Do Not Mistake My Silence For Lack Of Grief.”</p>
-                    <p class="h5">“Don't Be Sorry, Be Better.”</p>
-                    <p class="h5">“The Cycle Ends Here. We Must Be Better Than This.”</p>
-                    <img class="client-img mt-5" src="frontend/img/Norse_Kratos.png">
-                    <h2>Kratos</h2>
+            @foreach ($comments as $cmt )
+                <div class="client-saying1 row m-0 d-flex justify-content-center">
+                    <div class="client-text text-center col-lg-6 col-md-8 col-11 text-white d-flex flex-column align-items-center">
+                        <h2 class="p-1">Đánh giá của người dùng!</h2>
+                        <h1>-------------</h1>
+                        <img class="client-img mt-5" src="https://scr.vn/wp-content/uploads/2020/07/Avatar-Facebook-tr%E1%BA%AFng.jpg">
+                        <h2>{{ $cmt->comment_name }}</h2>
+                        <p class="h5">“{{ $cmt->comment }}”</p>
+                        <p class="h5"><a href="{{ route('frontend.main.info',$cmt->product->id) }}">{{ $cmt->product->name }}</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="client-saying2 row m-0 d-flex justify-content-center">
-                <div class="client-text text-center col-lg-6 col-md-8 col-11 text-white d-flex flex-column align-items-center">
-                    <h2 class="p-1">Our Client Say!</h2>
-                    <h1>-------------</h1>
-                    <p class="h5">"We're more ghosts than people."</p>
-                    <p class="h5">"Be loyal to what matters."</p>
-                    <p class="h5">"We're thieves in a world that don't want us no more."</p>
-                    <img class="client-img mt-5" src="frontend/img/athurmorgan.jpg">
-                    <h2>Athur Morgan</h2>
-                </div>
-            </div>
-            <div class="client-saying3 row m-0 d-flex justify-content-center">
-                <div class="client-text text-center col-lg-6 col-md-8 col-11 text-white d-flex flex-column align-items-center">
-                    <h2 class="p-1">Our Client Say!</h2>
-                    <h1>-------------</h1>
-                    <p class="h5"> “Why do I keep letting you hide me inside of things?”</p>
-                    <p class="h5"> “You will never leave this island.”</p>
-                    <p class="h5">“You Can’t Get Khotun’s Reward If You’re Dead”</p>
-                    <img class="client-img mt-5" src="frontend/img/JinSakai.png">
-                    <h2>Jin Sakai</h2>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
-    <div class="lastest-news" >
-        <div class="container lastest-news">
-            <div class="row m-0 mb-4">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
-                   <div class="category-home_text">
-                       <h3>Our Lastest News</h3>
-                   </div>
-                </div>
-                <div class="col-xl-6 col-md-6 col-12">
-                    <div class="more-category">
-                        <a href="blog.html">
-                            More Blog
-                            <i class="fas fa-angle-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-0 news-slides owl-carousel owl-theme">
-                <div class="col-12 list-news">
-                    <div class="latest-news-block pb-3">
-                        <a href="blog-detail.html">
-                            <img class="card-img-top" src="frontend/img/news1.jpg">
-                        </a>
-                        <div class="news-block pt-3 d-flex flex-column align-items-start">
-                            <h5>Go ahead! Now! With your family!</h5>
-                            <p>By <span class="blue" >  Partner 2021 /   Aug 23, 2021</span></p>
-                            <p class="latest-news" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid...</p>
-                            <div class="buy-shop2">
-                                <a href="blog-detail.html">
-                                    Continue Reading
-                                </a>
-                            </div>
-                        </div>        
-                    </div>
-                </div>
-                <div class="col-12 list-news">
-                    <div class="latest-news-block pb-3">
-                        <a href="blog-detail.html">
-                            <img class="card-img-top" src="frontend/img/news2.jpg">
-                        </a>
-                        <div class="news-block pt-3 d-flex flex-column align-items-start">
-                            <h5>Only fire when i Tell you to FIRE!</h5>
-                            <p>By <span class="blue" >  Partner 2021 /   Mar 23, 2021</span></p>
-                            <p class="latest-news" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid...</p>
-                            <div class="buy-shop2">
-                                <a href="blog-detail.html">
-                                    Continue Reading
-                                </a>
-                            </div>
-                        </div>        
-                    </div>
-                </div>
-                <div class="col-12 list-news">
-                    <div class="latest-news-block pb-3">
-                        <a href="blog-detail.html">
-                            <img class="card-img-top" src="frontend/img/news3.jpg">
-                        </a>
-                        <div class="news-block pt-3 d-flex flex-column align-items-start">
-                            <h5>The fate of Hyrule depends on us!</h5>
-                            <p>By <span class="blue" >  Partner 2021 /   Jun 23, 2021</span></p>
-                            <p class="latest-news" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid...</p>
-                            <div class="buy-shop2">
-                                <a href="blog-detail.html">
-                                    Continue Reading
-                                </a>
-                            </div>
-                        </div>        
-                    </div>
-                </div>
-                <div class="col-12 list-news">
-                    <div class="latest-news-block pb-3">
-                        <a href="blog-detail.html">
-                            <img class="card-img-top" src="frontend/img/news4.jpg">
-                        </a>
-                        <div class="news-block pt-3 d-flex flex-column align-items-start">
-                            <h5>Change Will Not Come In A Sunrise</h5>
-                            <p>By <span class="blue" >  Partner 2021 /   Jan 23, 2021</span></p>
-                            <p class="latest-news" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid...</p>
-                            <div class="buy-shop2">
-                                <a href="blog-detail.html">
-                                    Continue Reading
-                                </a>
-                            </div>
-                        </div>        
-                    </div>
-                </div>
-                <div class="col-12 list-news">
-                    <div class="latest-news-block pb-3">
-                        <a href="blog-detail.html">
-                            <img class="card-img-top" src="frontend/img/news5.jpg">
-                        </a>
-                        <div class="news-block pt-3 d-flex flex-column align-items-start">
-                            <h5>You've Heard Stories About Me.</h5>
-                            <p>By <span class="blue" >  Partner 2021 /   Apr 10, 2021</span></p>
-                            <p class="latest-news" >Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incidid...</p>
-                            <div class="buy-shop2">
-                                <a href="blog-detail.html">
-                                    Continue Reading
-                                </a>
-                            </div>
-                        </div>        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="logo-brand mt-5" data-aos="fade-up">
+    <div class="logo-brand mt-5" >
         <div class="container">
             <div class="row">
-                <div class="logo-brand-slider  owl-theme owl-carousel ">
+                <div class="logo-brand-slider  owl-theme owl-carousel " data-aos="fade-up">
+                    @foreach ($brands as$brand )
                     <div class="slider-box">
                         <div class="col-12">
                             <div class="brand-img">
-                                <img src="frontend/img/logo3.png">
+                                <img src="{{ $brand->my_image }}">
                             </div>
                         </div>
                     </div>
-                    <div class="slider-box">
-                        <div class="col-12">
-                            <div class="brand-img">
-                                <img src="frontend/img/logo1.webp">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-box">
-                        <div class="col-12">
-                            <div class="brand-img">
-                                <img src="frontend/img/logo5.png" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-box">
-                        <div class="col-12">
-                            <div class="brand-img">
-                                <img src="frontend/img/log4.png" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-box">
-                        <div class="col-12">
-                            <div class="brand-img">
-                                <img src="frontend/img/logo6.png" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-box">
-                        <div class="col-12">
-                            <div class="brand-img">
-                                <img src="frontend/img/logo7.jpg" >
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-box">
-                        <div class="col-12">
-                            <div class="brand-img">
-                                <img src="frontend/img/logo11.png" >
-                            </div>
-                        </div>
-                    </div>
-                    
+                    @endforeach
                 </div>
             </div>
         </div>

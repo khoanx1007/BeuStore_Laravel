@@ -28,6 +28,7 @@
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="/frontend/register/css/util.css">
 <link rel="stylesheet" type="text/css" href="/frontend/register/css/main.css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
 <!--===============================================================================================-->
 @endsection
 @section('content')
@@ -42,21 +43,21 @@
         </span>
         <div class="wrap-input100 validate-input">
           <span class="label-input100">Họ tên</span>
-          <input class="input100" type="text" name="name" placeholder="Họ tên...">
+          <input class="input100" type="text" name="name" value="{{ old('name') }}" placeholder="Họ tên...">
           <span class="focus-input100"></span>
           @error('name') <div class="alert-validate" data-validate = "{{ $message }}"></div>@enderror
         </div>
 
         <div class="wrap-input100 validate-input">
           <span class="label-input100">Email</span>
-          <input class="input100" type="email" name="email" placeholder="Địa chỉ Email...">
+          <input class="input100" type="email" name="email" value="{{ old('email') }}" placeholder="Địa chỉ Email...">
           <span class="focus-input100"></span>
           @error('email') <div class="alert-validate" data-validate = "{{ $message }}"></div>@enderror
         </div>
 
         <div class="wrap-input100 validate-input">
           <span class="label-input100">Mật khẩu</span>
-          <input class="input100" type="password" name="password" placeholder="********">
+          <input class="input100" type="password" name="password"  placeholder="********">
           <span class="focus-input100"></span>
           @error('password') <div class="alert-validate" data-validate = "{{ $message }}"></div>@enderror
         </div>
@@ -113,9 +114,12 @@
 	<script src="/frontend/register/vendor/select2/select2.min.js"></script>
 <!--===============================================================================================-->
 	<script src="/frontend/register/vendor/daterangepicker/moment.min.js"></script>
+
 	<script src="/frontend/register/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 	<script src="/frontend/register/vendor/countdowntime/countdowntime.js"></script>
+  <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+        {!! Toastr::message() !!}
 <!--===============================================================================================-->
 	{{-- <script src="/frontend/register/js/main.js"></script> --}}
 @endsection

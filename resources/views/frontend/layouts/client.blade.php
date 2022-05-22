@@ -10,14 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>    
     <link rel="stylesheet" href="/frontend/css/all.min.css">
-    <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/reponsive.css">
     <link rel="stylesheet" href="/frontend/css/sweetalert.css">
-    <link rel="stylesheet" href="/frontend/css/web.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
+    <link rel="stylesheet" href="/frontend/css/css1.css">
     <link rel="stylesheet" href="/frontend/css/shop.min.css">
     <link rel="stylesheet" href="/frontend/css/cart.css">
     <link rel="stylesheet" href="/frontend/css/checkout.css">
-    <link rel="stylesheet" href="/frontend/css/shop-detail.css">
+    <link rel="stylesheet" href="/frontend/css/info.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha512-dTu0vJs5ndrd3kPwnYixvOCsvef5SGYW/zSSK4bcjRBcZHzqThq7pt7PmCv55yb8iBvni0TSeIDV8RYKjZL36A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -59,7 +60,7 @@
   FOOTER
   --------------------------------------->
   @include('frontend.includes.footer')
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -91,7 +92,53 @@
                 }
             });     
         });
-      </script>
+    </script>
+    <script style="text/javascript">
+      function remove_background(product_id){
+        for(var count=1;count<=5;count++){
+          $('#'+product_id+'-'+count).css('color','#ccc');
+        }
+      }
+      $(document).on('mouseenter','.rating',function(){
+        var index = $(this).data("index");
+        var product_id = $(this).data("product_id");
+        remove_background(product_id);
+        for(var count = 1;count<=index;count++){
+          $('#'+product_id+'-'+count).css('color','#ffcc00');
+        }
+      });
+      $(document).on('mouseleave','.rating',function(){
+        var index = $(this).data("index");
+        var product_id = $(this).data("product_id");
+        var rating = $(this).data("rating");
+        remove_background(product_id);
+        for(var count = 1;count<=rating;count++){
+          $('#'+product_id+'-'+count).css('color','#ffcc00');
+        }
+      });
+      $(document).on('click','.rating',function(){
+        var index = $(this).data("index");
+        var product_id = $(this).data("product_id");
+        var _token = $('input[name="_token"]').val();
+        $.ajax({
+          url:'{{ url('/insert_rating') }}',
+          method:'POST',
+          data:{
+            index:index,
+            product_id:product_id,
+            _token:_token,
+          },
+          success:function(data){
+            if(data=='done'){
+              swal("Gửi đánh giá thành công!");
+            }
+            else{
+              swal("Lỗi đánh giá!")
+            }
+          }
+        });
+      });
+    </script>
       <script src='https://cdn.jsdelivr.net/gh/vietblogdao/js/districts.min.js'></script>
       <script>//<![CDATA[
         if (address_2 = localStorage.getItem('address_2_saved')) {
@@ -256,37 +303,6 @@
         });
       </script>
       <script type="text/javascript">
-        $(document).ready(function(){
-            $('.send-order').click(function(){
-              var fName = $('.fName').val();
-              var lName = $('.lName').val();\
-              var phone = $('.phone').val();
-              var email = $('.email').val();
-              var province = $('.province').val();
-              var district = $('.district').val(); 
-              var ward = $('.ward').val();
-              var message = $('.message').val();
-              var _token = $('input[name="_token"]').val();
-              $.ajax({
-                    url: '{{url('/checkout/save')}}',
-                    method: 'POST',
-                    data:
-                    {
-                      cart_product_id:cart_product_id,
-                      cart_product_name:cart_product_name,
-                      cart_product_image:cart_product_image,
-                      cart_product_price:cart_product_price,
-                      cart_product_qty:cart_product_qty,
-                      _token:_token
-                    },
-                    success:function(){
-                        alert('ok');
-                      }
-                  })
-          });
-        });
-      </script>
-      <script type="text/javascript">
           $(document).ready(function(){
             $('.choose').change('change',function(){
               var action = $(this).attr('id');
@@ -309,6 +325,168 @@
               });
             });
           })
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          load_comment();
+          function load_comment(){
+            var product_id = $('.comment_product_id').val();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+              url:'{{ url('/load_comment') }}',
+              method:'POST',
+              data:{
+                product_id:product_id,
+                _token:_token
+              },
+              success:function(data){
+                $('#comment_show').html(data);
+              }
+            });
+          }
+          $('.send_comment').click(function(){
+            var product_id = $('.comment_product_id').val();
+            var comment_name = $('.comment_name').val();
+            var comment_email = $('.comment_email').val();
+            var comment = $('.comment').val();
+            var _token = $('input[name="_token"]').val();
+            $.ajax({
+              url:'{{ url('/send_comment') }}',
+              method:'POST',
+              data:{
+                product_id:product_id,
+                _token:_token,
+                comment_name:comment_name,
+                comment_email:comment_email,
+                comment:comment,
+              },
+              success:function(){ 
+                swal("Đánh giá","Gửi đánh giá thành công","success");
+                        window.setTimeout(function(){
+                          location.reload();
+                        },2000); 
+                load_comment();
+              }
+            });
+            
+          });
+        });
+      </script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+            $('.send_order').click(function(){
+              swal({
+                  title: 'Bạn có muốn xác nhận đơn hàng?',
+                  text: 'Đơn hàng sẽ không được hoàn trả khi đặt, bạn có muốn đặt không?',
+                  showCancelButton: true,
+                  confirmButtonClass:'btn-success',
+                  cancelButtonClass:'btn-danger',
+                  confirmButtonText: 'Xác nhận',
+                  cancelButtonText: 'Quay lại',
+                  closeOnConfirm:false,
+                  closeOnCancel: false  
+                  },
+                  function(isConfirm){
+                  if (isConfirm) {
+                    var fName = $('.fName').val();
+                    var lName = $('.lName').val();
+                    var phone = $('.phone').val();
+                    var email = $('.email').val();
+                    var province = $('.province').val();
+                    var district = $('.district').val(); 
+                    var ward = $('.ward').val();
+                    var message = $('.message').val();
+                    var coupon = $('.coupon').val();
+                    var _token = $('input[name="_token"]').val();
+                    $.ajax({
+                      url: '{{url('/checkout/saveOrder')}}',
+                      method: 'POST',
+                      data:
+                      {
+                        fName:fName,
+                        lName:lName,
+                        phone:phone,
+                        email:email,
+                        province:province,
+                        district:district,
+                        ward:ward,
+                        message:message,
+                        coupon:coupon,
+                        _token:_token,
+                      },
+                      success:function(){
+                        swal("Đơn hàng","Đơn hàng của bạn đã được gửi thành công","success");
+                        window.setTimeout(function(){
+                          location.reload();
+                        },2000); 
+                      }
+                    });
+                     
+                  } 
+                  else {
+                    swal("Đóng","Đơn hàng chưa được gửi, vui lòng hoàn tất đơn hàng","error");
+                  }
+                });
+              });
+        });
+      </script>
+      <script>
+        $(document).ready(function(){
+          $('.send_order').click(function(){
+              swal({
+                  title: 'Bạn có muốn xoá bình luận?',
+                  text: 'Sau khi xoá xong sẽ không thể khôi phục, xác nh',
+                  showCancelButton: true,
+                  confirmButtonClass:'btn-success',
+                  cancelButtonClass:'btn-danger',
+                  confirmButtonText: 'Xác nhận',
+                  cancelButtonText: 'Quay lại',
+                  closeOnConfirm:false,
+                  closeOnCancel: false  
+                  },
+                  function(isConfirm){
+                  if (isConfirm) {
+                    var fName = $('.fName').val();
+                    var lName = $('.lName').val();
+                    var phone = $('.phone').val();
+                    var email = $('.email').val();
+                    var province = $('.province').val();
+                    var district = $('.district').val(); 
+                    var ward = $('.ward').val();
+                    var message = $('.message').val();
+                    var coupon = $('.coupon').val();
+                    var _token = $('input[name="_token"]').val();
+                    $.ajax({
+                      url: '{{url('/checkout/saveOrder')}}',
+                      method: 'POST',
+                      data:
+                      {
+                        fName:fName,
+                        lName:lName,
+                        phone:phone,
+                        email:email,
+                        province:province,
+                        district:district,
+                        ward:ward,
+                        message:message,
+                        coupon:coupon,
+                        _token:_token,
+                      },
+                      success:function(){
+                        swal("Đơn hàng","Đơn hàng của bạn đã được gửi thành công","success");
+                        window.setTimeout(function(){
+                          location.reload();
+                        },2000); 
+                      }
+                    });
+                     
+                  } 
+                  else {
+                    swal("Đóng","Đơn hàng chưa được gửi, vui lòng hoàn tất đơn hàng","error");
+                  }
+                });
+              });
+        })
       </script>
       <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
       {!! Toastr::message() !!}

@@ -40,6 +40,7 @@
                 <th scope="col">Tên Game</th>
                 <th scope="col">Cấu hình tối thiểu</th>
                 <th scope="col">Cấu hình đề nghị</th>
+                <th scope="col">Video Gameplay</th>
                 <th scope="col">Thao tác</th>
               </tr>
             </thead>
@@ -49,15 +50,18 @@
                     <td>{{ $product->name }}</td>
                     @foreach ($requirements as $requirement )
                       @if ($product->id == $requirement->product_id)
-                        <td>{{ $requirement->min_sys }}</td>
-                        <td>{{ $requirement->sug_sys }}</td>
-                      @else
-                        <td></td>
-                        <td></td>
+                        <td>{!! $requirement->min_sys !!}</td>
+                        <td>{!! $requirement->sug_sys !!}</td>
+                        <td>{!! $requirement->gameplay !!}</td>
+                        <td>
+                          <a href="{{route('backend.requirements.edit', $requirement->id) }}" ><button class="btn btn-primary"><i class="fas fa-pen"></i></button></a>                    
+                          <form method="POST" action="{{route('backend.requirements.destroy',$requirement->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button  class="btn btn-danger"><i class="fas fa-trash"></i></button>  
+                          </form>    
+                        </td>
                       @endif
-                      <td>
-                        <a href="{{route('backend.requirements.edit', $requirement->id) }}" ><button class="btn btn-primary"><i class="fas fa-pen"></i></button></a>                    
-                      </td>
                     @endforeach
                   </tr>              
               @endforeach

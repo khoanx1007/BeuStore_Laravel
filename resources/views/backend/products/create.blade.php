@@ -29,9 +29,6 @@ Tạo sản phẩm
   <div class="row">
     <div class="col-md-12">
       <div class="card">
-        <div class="card-header">
-          <div class="card-title">Form Elements</div>
-        </div>
         <form action="{{route('backend.products.store') }}" method="post" role="form" enctype="multipart/form-data" autocomplete="off">
           @csrf
           <div class="card-body">
@@ -46,10 +43,13 @@ Tạo sản phẩm
             </div>
             <div class="form-group">
               <label>Tên Sản phẩm</label>
-              <input type="text" name="name" class="form-control" placeholder="Nhập...">
+              <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nhập..." value="{{ old('name') }}">
+              @error('name')
+                <div class="alert alert-danger">{{ $message }}</div>
+              @enderror
             </div>
             <div class="form-group" >
-              <label>Game</label>
+              <label>Hãng Game</label>
               <select class="form-control" name="brand">
                   @foreach ($brands as $brand)
                     <option value="{{$brand->id}}">{{$brand->name}}</option>
@@ -58,15 +58,24 @@ Tạo sản phẩm
             </div>
             <div class="form-group">
                 <label>Giá gốc</label>
-                <input type="text" name="price_origin" class="form-control" value="" placeholder="Nhập...">
+                <input type="text" name="price_origin" class="form-control @error('price_origin') is-invalid @enderror " value="{{ old('price_origin') }}" placeholder="Nhập...">
+                @error('price_origin')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label>Giá Sale</label>
-                <input type="text" name="price_sale" class="form-control" value="" placeholder="Nhập...">
+                <input type="text" name="price_sale" class="form-control  @error('price_sale') is-invalid @enderror" value="{{ old('price_sale') }}" placeholder="Nhập...">
+                @error('price_sale')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="comment">Mô tả</label>
-                <input type="text" name="description" class="form-control" id="comment" rows="5" value="" placeholder="Nhập..."></textarea>
+                <textarea rows="5" type="text" name="description" class="form-control @error('description') is-invalid @enderror" id="comment" rows="5"  placeholder="Nhập..."></textarea>
+                @error('description')
+                  <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group" >
               <label>Danh mục</label>
@@ -87,7 +96,7 @@ Tạo sản phẩm
                     @endforeach
                   </select>
                   @error('tags')
-                  <div class="alert alert-danger">{{ $message }}</div>
+                    <div class="alert alert-danger">{{ $message }}</div>
                   @enderror
             </div> 
           </div>

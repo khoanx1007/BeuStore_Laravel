@@ -182,6 +182,7 @@ return [
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Brian2694\Toastr\ToastrServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -199,6 +200,7 @@ return [
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
+        'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
     ])->toArray(),
     
     

@@ -13,7 +13,7 @@
 								<div class="text-white p-3">
 									<h1>Rockstar Games</h1>
 									<span id="GtaV-text">Grand Thief Auto V</span>
-									<p class="h5">One of the best open-world games of all time on PC, Top 2 Best-selling game, Game of the Decade...</p>
+									<p class="h5">Một trong những tựa game bán chạy nhất mọi thời đại, vua của các game</p>
 									<div class="btn-shop mt-xl-3 mt-lg-3 mt-0">
 										<a href="shop-details.html">
 											Buy Now
@@ -59,18 +59,6 @@
 											</a>
 										</div>
 										<div class="card-block d-flex flex-column align-items-center"> 
-												<div class="star-icon mt-2">
-												<input type="radio" name="rating1" id="rating1">
-												<label for="rating1" class="fa fa-star"></label>
-												<input type="radio" name="rating1" id="rating2">
-												<label for="rating2" class="fa fa-star"></label>
-												<input type="radio" name="rating1" id="rating3">
-												<label for="rating3" class="fa fa-star"></label>
-												<input type="radio" name="rating1" id="rating4">
-												<label for="rating4" class="fa fa-star"></label>
-												<input type="radio" name="rating1" id="rating5">
-												<label for="rating5" class="fa fa-star"></label>
-												</div>
 											<form class="d-flex flex-column align-items-center">
 												@csrf
 												<input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
@@ -80,7 +68,7 @@
 												<input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
 												<a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
 												</span>
-												<span class="font-weight-bolder">{{ $product->price_origin }}$</span>
+												<span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span>    
 												<button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
 											</form>
 										</div>
@@ -99,20 +87,8 @@
 									<img class="product-img" src="{{ $product->my_image }}">
 								</div>
 								<div class="cate-des text-dark" >
-									<div class="star-icon mt-2">
-										<input type="radio" name="rating1" id="rating1">
-										<label for="rating1" class="fa fa-star"></label>
-										<input type="radio" name="rating1" id="rating2">
-										<label for="rating2" class="fa fa-star"></label>
-										<input type="radio" name="rating1" id="rating3">
-										<label for="rating3" class="fa fa-star"></label>
-										<input type="radio" name="rating1" id="rating4">
-										<label for="rating4" class="fa fa-star"></label>
-										<input type="radio" name="rating1" id="rating5">
-										<label for="rating5" class="fa fa-star"></label>
-									</div>
 									<h4 class="font-weight-bold text-rated">{{ $product->name }}</h4>
-									<h5 class="font-weight-bolder text-dark">{{ $product->price_origin }} $</h5>
+									<h5 class="font-weight-bolder text-dark"><span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span></h5>
 									<p class="overflow">{{ $product->description }}</p>
 									<div class="shopping">
 										<ul class="d-flex align-items-center">

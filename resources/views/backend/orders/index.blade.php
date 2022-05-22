@@ -24,35 +24,37 @@ Danh sách hãng Game
         @endif
         <div class="page-inner">
           <div class="page-header">
-            <h4 class="page-title">Danh sách Coupon</h4>
+            <h4 class="page-title">Danh sách đơn hàng</h4>
           </div>
           <div class="row">
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                  <div class="card-title">Danh sách Coupon</div>
-                  <a href="{{route('backend.coupons.create') }}" class="btn btn-info ml-3" id="create-new-product">Thêm Coupon</a>
+                  <div class="card-title">Danh sách đơn hàng</div>
                 </div>
                 <div class="card-body">
                   <table class="table table-head">
                     <thead>
                       <tr>
                         <th>Tên</th>
-                        <td>Thể loại</td>
-                        <td>Số lượng</td>
-                        <td>Giảm giá</td>
-                        <th>Thao tác</th>
+                        <td>Email</td>
+                        <td>Điện thoại</td>
+                        <td>Địa chỉ</td>
+                        <td>Ngày tạo</td>
+                        <th>Đơn hàng</th>
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($coupons as $coupon)
+                      @foreach($orders as $order)
                         <tr data-widget="expandable-table" aria-expanded="true">
-                          <td>{{$coupon->name}}</td>
-                          <td>{{$coupon->type_coupon}}</td>
-                          <td>{{$coupon->qty}}</td>
-                          <td>{{$coupon->discount}}@if ($coupon->type == 1) % @else $ @endif</td>
-                          <td>
-                            <form method="POST" action="{{route('backend.coupons.destroy',$coupon->id) }}">
+                          <td>{{$order->first_name}} {{ $order->last_name }}</td>
+                          <td>{{$order->email}}</td>
+                          <td>{{$order->phone}}</td>
+                          <td>{{$order->my_ward->name }}, {{$order->my_district->name }}, {{$order->my_province->name }}</td>
+                          <td>{{$order->created_at}}</td>
+                          <td class="d-flex align-items-center">  
+                            <a href="{{route('backend.orders.show',$order->order_product) }}"><button class="btn btn-primary"><i class="fas fa-eye"></i></button></a>  
+                            <form method="POST" action="{{route('backend.orders.destroy',$order->order_product) }}">
                               @csrf
                               @method('DELETE')
                               <button  class="btn btn-danger"><i class="fas fa-trash"></i></button>  

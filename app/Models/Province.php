@@ -11,4 +11,7 @@ class Province extends Model
     protected $fillable = ['name','type','matp'];
     protected $primaryKey = 'matp';
     protected $table = 'a_provinces';
+    public function ordersinfo(){
+        return $this->hasMany(OrderInfo::class);
+    }
 }

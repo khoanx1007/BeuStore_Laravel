@@ -26,11 +26,15 @@ Tạo sản phẩm
             </div>
             <div class="form-group">
               <label for="comment">Cấu hình tối thiểu</label>
-              <input type="text" name="min_sys" class="form-control" id="comment" rows="5" value="" placeholder="Nhập..."></textarea>
+              <textarea name="min_sys" class="form-control" id="ckeditor" rows="5" value="" placeholder="Nhập..."></textarea>
             </div>
             <div class="form-group">
               <label for="comment">Cấu hình đề nghị</label>
-              <input type="text" name="sug_sys" class="form-control" id="comment" rows="5" value="" placeholder="Nhập..."></textarea>
+              <textarea name="sug_sys" class="form-control" id="ckeditor1" rows="5" value="" placeholder="Nhập..."></textarea>
+            </div>
+            <div class="form-group">
+              <label for="comment">Gameplay Video</label>
+              <textarea name="gameplay" class="form-control" id="ckeditor2" rows="5" value="" placeholder="Nhập..."></textarea>
             </div>
           </div>
           <!-- /.card-body -->

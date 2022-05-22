@@ -5,10 +5,12 @@
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12 col-12">
 					<div class="goods-header">
-						<div class="goods-img border rounded mb-5">
-							<img src="{{ $product->my_image }}" class="w-100">
-						</div>
-						<div class="row productimg-bot owl-carousel owl-theme owl-nav">
+						<div class="col-12">
+							<div class="goods-img border rounded mb-5">
+								<img src="{{ $product->my_image }}" class="w-100">
+							</div>
+						</div>	
+						<div class="row m-0 productimg-bot owl-carousel owl-theme owl-nav">
 							<div class="col-12">
 								<div class="bt-img border">
 									<img src="{{ $product->my_image }}" class="w-100">
@@ -29,19 +31,37 @@
 				<div class="col-lg-6 col-md-6 col-sm-12 col-12 left-description">
 					<div class="goods-text">
 						<h3>{{ $product->name }}</h3>
-						<div class="star-icon mt-2">
-							<label for="rating1" class="fa fa-star"></label>
-							<label for="rating2" class="fa fa-star"></label>
-							<label for="rating3" class="fa fa-star"></label>
-							<label for="rating4" class="fa fa-star"></label>
-							<label for="rating5" class="fa fa-star"></label>
+						<div class=" mt-2">
+							<ul class="list-inline" style="display: inline;" title="Averange Rating">
+								@for ($count=1;$count<=5;$count++)
+									@php
+										if($count<=$rating){
+											$color='color:#ffcc00;';
+										}
+										else
+										{
+											$color='color:#ccc;';
+										}
+									@endphp
+									<li style="display: inline;cursor:pointer;{{ $color }} font-size:30px;" title="star-rating" 
+									data-index="{{ $count }}"
+									data-product_id="{{ $product->id }}"
+									data-rating="{{ $rating }}"
+									class="rating"
+									>
+									&#9733;
+									
+									</li>
+								@endfor
+								
+							</ul>({{ $ratinga }} Sao, dựa trên {{ $ratingc }} đánh giá)
 						</div>
-						<p class="font-weight-bolder text-primary" >${{ $product->price_origin }}</p>
+						<span class="font-weight-bolder font-italic text-primary" >${{ $product->price_origin }}</span>
 						<p class="text-secondary text-justify"> 
 							{{ $product->description }}
 						</p>
 						<h4 class="line"></h4>
-						<h6><i class="fas fa-check-circle text-primary pb-3"></i> Còn hàng</h6>
+						<h6><i class="fas fa-check-circle text-primary"></i> Còn hàng</h6>
 						<span  class="service-goods pb-3">
 							<i class="fas fa-truck text-primary"></i> <a class="black pr-3" href="">Giao hàng</a>
 							<i class="fas fa-envelope  text-primary"></i> <a class="black pr-3" href="">Hỏi thêm về sản phẩm</a>
@@ -90,24 +110,91 @@
 		<div class="container">
 			<div class="goods-description-hd">
 				<ul class="d-flex threedes">
-					<li class="gpbu blue">Cấu hình tối thiểu</li>
-					<li class="dvbu">Cấu hình đề nghị</li>
-					<li class="rcbu">Đánh giá</li>
+					<li class="gpbu blue">Đánh giá</li>
+					<li class="rcbu">Cấu hình</li>
+					<li class="dvbu">Gameplay</li>
+					
 				</ul>
 			</div>
-			<div class="destext text-justify" id="gpdes">
-				<p>Similar to the previous entries in the series, Far Cry 6 is an action-adventure first-person shooter game set in an open world environment which the player can navigate on foot or via using various land vehicles, combat vehicles, watercrafts, or aircrafts. The gameplay mainly focuses on armed and close-quarters combat, while also allows the player to freely roam and explore Yara's 88 km² (34 sq mi) environment, which is divided into seven main regions with a vast array of terrain ranging from urban areas and dense jungles to mountain ranges and open oceans.</p>
-				<p>The game incorporates many elements found in role-playing games, including upgradeable guerilla camps and gear customisation mechanics in order to uniquely tailor the gameplay experience, while also introducing a "Rank Level" system which indicates the rank of the player and highlights the level of a specific region similar to recent Assassin's Creed titles. As the game progresses and the player explores more regions of Yara, enemy forces will be equipped with more powerful, higher level gear and the surrounding military target locations become heavily fortified</p>
+			<div class="destext text-justify" id="rcdes">
+				@foreach ($requirement as $item )
+					<h4>Cấu hình tối thiểu:</h4>
+						{!! $item->min_sys !!}
+					<h4>Cấu hình đề nghị:</h4>
+						{!! $item->sug_sys !!}
+				@endforeach
+				
 			</div>
 			<div class="destext text-justify" id="dvdes">
-				<p>Production of Far Cry 6 had been ongoing for four years at the time of its July 2020 announcement, with Ubisoft Toronto the lead studio for the game. Narrative director Navid Khavari said that they started researching revolutions of the past, they came across the idea of the modern guerrilla revolution such as the Cuban Revolution, which gave them numerous ideas of how to drive the player-character into fighting against a repressive government. This also brought back the need to give the player-character, Dani Rojas, a voice, compared to recent Far Cry games in which the protagonist had been silent. Khavari said "it was essential for us to ensure that the protagonist has a personal investment in that revolution". Using Cuba as an influence also established the return to a tropical setting, a feature of the earlier Far Cry games, as well as giving the setting a "timeless" look due to economic blockades that had been imposed on the island, mixing vintage cars with modern weapons. Khavari spent a month in Cuba, speaking to residents there to help develop the setting.</p>
-				<p>In contrast to the media controversy over Ubisoft distancing its stance that Far Cry 5 was made as a political statement, Khavari said that Far Cry 6 was "political", adding: "A story about a modern revolution must be". While the game's narrative element is based on stories around Cuba, Khavari stated that the game "doesn't want to make a political statement about what's happening in Cuba specifically", and does not attempt to make "a simplified, binary political statement specifically on the current political climate in Cuba". Khavari's family had experienced the Iranian Revolution in the late 1970s, eventually having fled to Canada, and using these experiences, those from Cuba, and from other research that Ubisoft had done, he wanted Far Cry 6 to have a story "about the conditions that lead to the rise of fascism in a nation, the costs of imperialism, forced labor, the need for free-and-fair elections, LGBTQ+ rights, and more."</p>
+				@foreach ($requirement as $item )
+						{!! $item->gameplay !!}
+				@endforeach
 			</div>
-			<div class="destext text-justify" id="rcdes">
-				<p>Far Cry 6 received "generally favorable" reviews, according to review aggregator Metacritic.</p>
-				<p>An IGN review by Jon Ryan gave the game an 8 rating out of 10, saying that "Far Cry 6 smooths over a lot of the bumps that have cropped up in the past few games. Even though it misses some steps, especially with its new inventory system, it's the best the series has been in years."</p>
-				<p>Destructoid's Jordan Devore gave 7.5 points out of 10, saying "Solid and definitely have [sic] an audience. There could be some hard-to-ignore faults, but the experience is fun."</p>
-				<p>Matthew Gault of Vice criticized and described the game as "creatively and morally bankrupt", believing the game "felt like an exhausting chore list", Gault claimed his article "isn't a review" because "honestly, I can't play this shit anymore. I just can't do it."[</p>
+			<div class="destext text-justify" id="gpdes">
+				<form>
+					@csrf
+					<input type="hidden" name="comment_product_id" class="comment_product_id" value="{{ $product->id }}">
+					<div id="comment_show"></div>
+				</form>
+					<div class="leave reply mt-2">
+						<form>
+							@csrf
+							<h4 class="font-weight-bold">Để lại đánh giá:</h4>
+							<ul class="list-inline rating" style="display: inline;" title="Averange Rating">
+								@for ($count=1;$count<=5;$count++)
+									@php
+										if($count<=$rating){
+											$color='color:#ffcc00;';
+										}
+										else
+										{
+											$color='color:#ccc;';
+										}
+									@endphp
+									<li style="display: inline;cursor:pointer;{{ $color }} font-size:30px;" title="star-rating" 
+									id="{{ $product->id }}-{{ $count }}"
+									data-index="{{ $count }}"
+									data-product_id="{{ $product->id }}"
+									data-rating="{{ $rating }}"
+									class="rating"
+									>
+									&#9733;
+									
+									</li>
+								@endfor
+								
+							</ul>
+							<div class="row">
+								<div class="col-xl-12 col-md-12">
+									<div class="row">
+										<div class="col-xl-6 col-lg-6 col-md-6">
+											<div class="form-group">
+												<label class="form-label"><b>*Tên:</b></label>
+												<input id="name" name="comment_name" type="text" placeholder="Enter Your Name" class="form-control comment_name">
+											</div>
+										
+										</div>
+										<div class="col-xl-6 col-lg-6 col-md-6">
+											<div class="form-group">
+												<label class="form-label"><b>*Email:</b></label>
+												<input id="email" name="comment_email" type="email" placeholder="Enter Your Email" class="form-control comment_email">
+											</div>
+										</div>
+										<div class="col-xl-12 col-lg-12 col-md-12">
+											<div class="d-flex flex-column justify-content-start">
+												<label class="form-label"><b>Viết đánh giá:</b></label>
+												<textarea name="comment" class="comment form-control"></textarea>
+											</div>
+												<button type="button" name="send_comment" class="p-2 mt-3 rounded border border-0 bg-primary text-white send_comment">
+													Gửi đánh giá
+												</button>
+											</div>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</form>
+					</div>
 			</div>
 		</div>
 	</div>
@@ -126,400 +213,80 @@
 				</div>
 			</div>
 			<div class="productnew-box row m-0 owl-theme owl-carousel border border-bottom-0 border-right-0 border-left-0">
-				<div class="col-12 p-0">
-					<div class="product-box" >
-						<div class="card">
-							<div class="card-img">
-								<a href="">
-									<img class="card-img-top" src="/frontend/img/new1.jpg">
-								</a>
-							</div>
-							<div>
-								<span class="label-new">NEW</span>
-							</div>
-							<div id="link-action" class="action_link animate__animated ">
-								<ul>
-									<li>
-										<a><span><i class="fas fa-shopping-cart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="fas fa-sliders-h"></i></span></a>
-									</li>
-									<li>
-										<a><span ><i class="fas fa-heart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="far fa-eye"></i></span></a>
-									</li>
-								</ul>
-							</div>
-							<div class="card-block d-flex flex-column align-items-center"> 
-									<div class="star-icon mt-2">
-									<input type="radio" name="rating1" id="rating1">
-									<label for="rating1" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating2">
-									<label for="rating2" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating3">
-									<label for="rating3" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating4">
-									<label for="rating4" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating5">
-									<label for="rating5" class="fa fa-star"></label>
-									</div>
-								<span class="font">
-								<a class="infocard font-weight-bold" href="shop-detail.html">Battlefield 2042</a>
-								</span>
-								<span class="font-weight-bolder">$69.99</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 p-0">
-					<div class="product-box" >
-						<div class="card">
-							<div class="card-img">
-								<a href="">
-									<img class="card-img-top" src="/frontend/img/new3.jpg">
-								</a>
-							</div>
-							<div>
-								<span class="label-new">NEW</span>
-							</div>
-							<div id="link-action" class="action_link animate__animated ">
-								<ul>
-									<li>
-										<a><span><i class="fas fa-shopping-cart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="fas fa-sliders-h"></i></span></a>
-									</li>
-									<li>
-										<a><span ><i class="fas fa-heart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="far fa-eye"></i></span></a>
-									</li>
-								</ul>
-							</div>
-							<div class="card-block d-flex flex-column align-items-center"> 
-									<div class="star-icon mt-2">
-									<input type="radio" name="rating1" id="rating1">
-									<label for="rating1" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating2">
-									<label for="rating2" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating3">
-									<label for="rating3" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating4">
-									<label for="rating4" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating5">
-									<label for="rating5" class="fa fa-star"></label>
-									</div>
-								<span class="font">
-								<a class="infocard font-weight-bold" href="shop-detail.html">Back 4 Blood</a>
-								</span>
-								<span class="font-weight-bolder">$49.99</span>
+				@foreach ($products as $product )
+					<div class="col-12 p-0">
+						<div class="product-box" >
+							<div class="card">
+								<div class="card-img">
+									<a>
+										<img class="card-img-top" src="{{ $product->my_image }}">
+									</a>
+								</div>
+								<div class="tag-label">
+									@foreach ($product->tags as $tag)
+										<div class="badge p-2
+										@if ($tag->name == "Hot")
+											badge-danger
+										@elseif ($tag->name == "Mới")
+											badge-info
+										@elseif ($tag->name ==  "Yêu thích")
+											badge-success       
+										@else
+											badge-warning
+										@endif"> 
+											{{ $tag->name }}
+										</div> 
+									@endforeach
+								</div>
+								<div class="card-block d-flex flex-column align-items-center"> 
+										<div class="star-icon mt-2">
+										<label for="rating1" class="fa fa-star"></label>
+										<label for="rating2" class="fa fa-star"></label>
+										<label for="rating3" class="fa fa-star"></label>
+										<label for="rating4" class="fa fa-star"></label>
+										<label for="rating5" class="fa fa-star"></label>
+										</div>
+									<span class="font">
+									<form class="d-flex flex-column align-items-center">
+										@csrf
+										<input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
+										<input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
+										<input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
+										<input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
+										<input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
+										<a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
+										</span>
+										<span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span>
+										<button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
+									</form>
+									{{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
+										@csrf
+										<button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
+									</form> --}}
+									
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-12 p-0">
-					<div class="product-box" >
-						<div class="card">
-							<div class="card-img">
-								<a href="">
-									<img class="card-img-top" src="/frontend/img/new4.jpg">
-								</a>
-							</div>
-							<div>
-								<span class="label-new">NEW</span>
-							</div>
-							<div id="link-action" class="action_link animate__animated ">
-								<ul>
-									<li>
-										<a><span><i class="fas fa-shopping-cart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="fas fa-sliders-h"></i></span></a>
-									</li>
-									<li>
-										<a><span ><i class="fas fa-heart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="far fa-eye"></i></span></a>
-									</li>
-								</ul>
-							</div>
-							<div class="card-block d-flex flex-column align-items-center"> 
-									<div class="star-icon mt-2">
-									<input type="radio" name="rating1" id="rating1">
-									<label for="rating1" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating2">
-									<label for="rating2" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating3">
-									<label for="rating3" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating4">
-									<label for="rating4" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating5">
-									<label for="rating5" class="fa fa-star"></label>
-									</div>
-								<span class="font">
-								<a class="infocard font-weight-bold" href="shop-detail.html">Call of Duty: Vanguard</a>
-								</span>
-								<span class="font-weight-bolder">$59.99</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 p-0">
-					<div class="product-box" >
-						<div class="card">
-							<div class="card-img">
-								<a href="">
-									<img class="card-img-top" src="/frontend/img/new5.jpg">
-								</a>
-							</div>
-							<div>
-								<span class="label-new">NEW</span>
-							</div>
-							<div id="link-action" class="action_link animate__animated ">
-								<ul>
-									<li>
-										<a><span><i class="fas fa-shopping-cart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="fas fa-sliders-h"></i></span></a>
-									</li>
-									<li>
-										<a><span ><i class="fas fa-heart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="far fa-eye"></i></span></a>
-									</li>
-								</ul>
-							</div>
-							<div class="card-block d-flex flex-column align-items-center"> 
-									<div class="star-icon mt-2">
-									<input type="radio" name="rating1" id="rating1">
-									<label for="rating1" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating2">
-									<label for="rating2" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating3">
-									<label for="rating3" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating4">
-									<label for="rating4" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating5">
-									<label for="rating5" class="fa fa-star"></label>
-									</div>
-								<span class="font">
-								<a class="infocard font-weight-bold" href="shop-detail.html">Kena: Bridge of Spirits</a>
-								</span>
-								<span class="font-weight-bolder">$59.99</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 p-0">
-					<div class="product-box" >
-						<div class="card">
-							<div class="card-img">
-								<a href="">
-									<img class="card-img-top" src="/frontend/img/new6.jpg">
-								</a>
-							</div>
-							<div>
-								<span class="label-new">NEW</span>
-							</div>
-							<div id="link-action" class="action_link animate__animated ">
-								<ul>
-									<li>
-										<a><span><i class="fas fa-shopping-cart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="fas fa-sliders-h"></i></span></a>
-									</li>
-									<li>
-										<a><span ><i class="fas fa-heart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="far fa-eye"></i></span></a>
-									</li>
-								</ul>
-							</div>
-							<div class="card-block d-flex flex-column align-items-center"> 
-									<div class="star-icon mt-2">
-									<input type="radio" name="rating1" id="rating1">
-									<label for="rating1" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating2">
-									<label for="rating2" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating3">
-									<label for="rating3" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating4">
-									<label for="rating4" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating5">
-									<label for="rating5" class="fa fa-star"></label>
-									</div>
-								<span class="font">
-								<a class="infocard font-weight-bold" href="shop-detail.html">Fifa 22</a>
-								</span>
-								<span class="font-weight-bolder">$59.99</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 p-0">
-					<div class="product-box" >
-						<div class="card">
-							<div class="card-img">
-								<a href="">
-									<img class="card-img-top" src="/frontend/img/new7.jpg">
-								</a>
-							</div>
-							<div>
-								<span class="label-new">NEW</span>
-							</div>
-							<div id="link-action" class="action_link animate__animated ">
-								<ul>
-									<li>
-										<a><span><i class="fas fa-shopping-cart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="fas fa-sliders-h"></i></span></a>
-									</li>
-									<li>
-										<a><span ><i class="fas fa-heart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="far fa-eye"></i></span></a>
-									</li>
-								</ul>
-							</div>
-							<div class="card-block d-flex flex-column align-items-center"> 
-									<div class="star-icon mt-2">
-									<input type="radio" name="rating1" id="rating1">
-									<label for="rating1" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating2">
-									<label for="rating2" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating3">
-									<label for="rating3" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating4">
-									<label for="rating4" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating5">
-									<label for="rating5" class="fa fa-star"></label>
-									</div>
-								<span class="font">
-								<a class="infocard font-weight-bold" href="shop-detail.html">Life is Strange: True Colors</a>
-								</span>
-								<span class="font-weight-bolder">$59.99</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 p-0">
-					<div class="product-box" >
-						<div class="card">
-							<div class="card-img">
-								<a href="">
-									<img class="card-img-top" src="/frontend/img/new8.jpg">
-								</a>
-							</div>
-							<div>
-								<span class="label-new">NEW</span>
-							</div>
-							<div id="link-action" class="action_link animate__animated ">
-								<ul>
-									<li>
-										<a><span><i class="fas fa-shopping-cart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="fas fa-sliders-h"></i></span></a>
-									</li>
-									<li>
-										<a><span ><i class="fas fa-heart"></i></span></a>
-									</li>
-									<li>
-										<a><span><i class="far fa-eye"></i></span></a>
-									</li>
-								</ul>
-							</div>
-							<div class="card-block d-flex flex-column align-items-center"> 
-									<div class="star-icon mt-2">
-									<input type="radio" name="rating1" id="rating1">
-									<label for="rating1" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating2">
-									<label for="rating2" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating3">
-									<label for="rating3" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating4">
-									<label for="rating4" class="fa fa-star"></label>
-									<input type="radio" name="rating1" id="rating5">
-									<label for="rating5" class="fa fa-star"></label>
-									</div>
-								<span class="font">
-								<a class="infocard font-weight-bold" href="shop-detail.html">Resident Evil 8: Village</a>
-								</span>
-								<span class="font-weight-bolder">$59.99</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				@endforeach
+				
 			</div>
 		</div>
 	</div>
 	<div class="logo-brand mt-5">
 		<div class="container">
 			<div class="row">
-				<div class="logo-brand-slider  owl-theme owl-carousel " style="margin-top: 20px;">
-					<div class="slider-box">
-						<div class="col-12">
-							<div class="brand-img">
-								<img src="/frontend/img/logo3.png">
-							</div>
-						</div>
-					</div>
-					<div class="slider-box">
-						<div class="col-12">
-							<div class="brand-img">
-								<img src="/frontend/img/logo1.webp">
-							</div>
-						</div>
-					</div>
-					<div class="slider-box">
-						<div class="col-12">
-							<div class="brand-img">
-								<img src="/frontend/img/logo5.png" >
-							</div>
-						</div>
-					</div>
-					<div class="slider-box">
-						<div class="col-12">
-							<div class="brand-img">
-								<img src="/frontend/img/log4.png" >
-							</div>
-						</div>
-					</div>
-					<div class="slider-box">
-						<div class="col-12">
-							<div class="brand-img">
-								<img src="/frontend/img/logo6.png" >
-							</div>
-						</div>
-					</div>
-					<div class="slider-box">
-						<div class="col-12">
-							<div class="brand-img">
-								<img src="/frontend/img/logo7.jpg" >
-							</div>
-						</div>
-					</div>
-					<div class="slider-box">
-						<div class="col-12">
-							<div class="brand-img">
-								<img src="/frontend/img/logo11.png" >f
-							</div>
-						</div>
-					</div>
-					
-				</div>
+				<div class="logo-brand-slider  owl-theme owl-carousel " data-aos="fade-up">
+                    @foreach ($brands as$brand )
+                    <div class="slider-box">
+                        <div class="col-12">
+                            <div class="brand-img">
+                                <img src="{{ $brand->my_image }}">
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
 			</div>
 		</div>
 	</div>	

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Tag;
+use App\Models\Comment;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Http\Requests\StorePostRequest;
@@ -35,7 +36,7 @@ class ProductController extends Controller
         //     ->make(true);
         // }
         // return view('backend.products.index');
-        $products = Product::get();
+        $products = Product::orderBy('id','DESC')->get();
         
         // if ($request->ajax()) {
         //     $data = Product::get();
@@ -55,6 +56,7 @@ class ProductController extends Controller
       
         return view('backend.products.index',compact('products'));
     }
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -78,7 +80,7 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
         $tags = $request->get('tags');
         $brand = $request->get('brand');
@@ -169,6 +171,7 @@ class ProductController extends Controller
         $product->brand_id = $brand;
         $product->tags()->sync($tags);
         $product->categories()->sync($categories);
+        
         $product->save();
         Toastr::success('Cập nhật bài viết thành công','Thành công');
         return redirect()->route('backend.products.index');

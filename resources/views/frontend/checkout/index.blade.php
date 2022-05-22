@@ -1,6 +1,6 @@
 @extends('frontend.layouts.client')     
 @section('content')
-<form method="POST" style="border-top:2px solid black;">
+<form style="border-top:2px solid black;">
     @csrf
     <div class="container mt-5">
         <div class="row">
@@ -106,11 +106,11 @@
                                     <input type="hidden" name="coupon" class="coupon" value="{{ $cou['coupon_code'] }}">
                                     @if($cou['coupon_condition']==1)
                                     <p class="line"></p>
-                                        <b class="pb-1">Mã giảm giá</b>
+                                        <b class="pb-1 h5 font-weight-bold">Mã giảm giá</b>
                                         <p class="d-flex justify-content-between">
                                             <b>{{ $cou['coupon_code'] }}</b>
                                             @php
-                                            $total_coupon = ($total*$cou['coupon_price'])/100;
+                                                $total_coupon = ($total*$cou['coupon_price'])/100;
                                             @endphp 
                                             <span>-{{ number_format($total_coupon,0,',','.') }}$</span>
                                         </p>
@@ -157,7 +157,12 @@
                         </div> -->
                     </div>
                     <div class=" text-center mt-4">
-                        <button class="btn btn-primary send-order">ĐẶT HÀNG</button>
+                        <button type="button" name="send_order" class="btn btn-primary send_order">ĐẶT HÀNG</button>
+                    </div>
+                @else
+                    <p class="h2 pb-3">Đơn hàng của bạn</p>
+                    <div class="rounded" style="background-color:#e8ebef;padding:20px 30px;">
+                        Bạn chưa mua sản phẩm nào, vui lòng quay lại và mua sắm.
                     </div>
                 @endif
             </div>

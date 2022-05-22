@@ -75,7 +75,7 @@
       <div class="card">
         <div class="card-header d-flex justify-content-between">
           <div class="card-title">Danh sách sản phẩm</div>
-          <a href="{{route('backend.products.create') }}" class="btn btn-info ml-3" id="create-new-product">Add New</a>
+          <a href="{{route('backend.products.create') }}" class="btn btn-info ml-3" id="create-new-product">Thêm mới</a>
         </div>
         <div class="card-body">
           <table class="table table-head">

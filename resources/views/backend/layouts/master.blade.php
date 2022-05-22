@@ -22,6 +22,9 @@
 	<link rel="stylesheet" href="/backend/assets/css/atlantis.min.css">	
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="/backend/assets/css/style.css">
+	<link rel="stylesheet" href="/frontend/css/sweetalert.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" id="theme-styles">
 	{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" /> --}}
 	<link  href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
@@ -47,7 +50,7 @@
 	</div>
 	
 	<!--   Core JS Files   -->
-	<script src="/backend/assets/js/core/jquery.3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="/backend/assets/js/core/popper.min.js"></script>
 	<script src="/backend/assets/js/core/bootstrap.min.js"></script>
 
@@ -61,6 +64,8 @@
 
 	<!-- Chart JS -->
 	<script src="/backend/assets/js/plugin/chart.js/chart.min.js"></script>
+	<script src="/frontend/js/sweetalert.js"></script>
+	<script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
 
 	<!-- jQuery Sparkline -->
 	<script src="/backend/assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
@@ -80,6 +85,7 @@
 
 	<!-- Sweet Alert -->
 	<script src="/backend/assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+	
 
 	<!-- Atlantis JS -->
 	<script src="/backend/assets/js/atlantis.min.js"></script>
@@ -293,6 +299,71 @@
 		   }
 		 })
 	   }
+	</script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+          $('.comment_check').click(function(){
+              var comment_status = $(this).data('comment_status');
+			  var comment_id = $(this).data('id');
+			  var comment_product_id = $(this).attr('id');
+			  var _token = $('input[name="_token"]').val();
+			  $.ajax({
+				  url:'{{ route('backend.') }}',
+				  method:'POST',
+				  headers:{
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				  },
+				  data:{
+					comment_status:comment_status,
+					comment_id:comment_id,
+					comment_product_id:comment_product_id,
+				  },
+				  success:function(data){
+					Swal.fire('Duyệt thành công!');
+					window.setTimeout(function(){
+                          location.reload();
+                        },2000); 
+				  }
+			  });
+			  
+          });
+        });
+    </script>
+	<script type="text/javascript">
+        $(document).ready(function(){
+          $('.btn_reply').click(function(){
+			  var comment_id = $(this).data('id');
+              var comment_reply = $('.reply_'+comment_id).val();
+			  var comment_product_id = $(this).data('product_id');
+			  $.ajax({
+				  url:'{{ route('backend.reply') }}',
+				  method:'POST',
+				  headers:{
+					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+				  },
+				  data:{
+					comment_reply:comment_reply,
+					comment_id:comment_id,
+					comment_product_id:comment_product_id,
+				  },
+				  success:function(data){
+					Swal.fire('Trả lời thành công!');
+					$('.reply_'+comment_id).val('');
+					window.setTimeout(function(){
+                          location.reload();
+                        },1500); 
+				  }
+			  });
+			  
+          });
+        });
+    </script>
+	<script src="/ckeditor4/ckeditor.js"></script>
+	<script>
+		CKEDITOR.replace('ckeditor');
+		CKEDITOR.replace('ckeditor1');
+		CKEDITOR.replace('ckeditor2');
+		CKEDITOR.replace('ckeditor3');
 	</script>
 </body>
 </html>
