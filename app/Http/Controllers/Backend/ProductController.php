@@ -36,7 +36,12 @@ class ProductController extends Controller
         //     ->make(true);
         // }
         // return view('backend.products.index');
-        $products = Product::orderBy('id','DESC')->get();
+        $name=$request->get('name');
+        $product_query = Product::orderBy('id','desc')->select('*');
+        $products = Product::orderBy('id','DESC')->paginate(8);
+        if (!empty($name)){
+            $products = $product_query->where('name',"LIKE","%$name%")->paginate(8);
+        }
         
         // if ($request->ajax()) {
         //     $data = Product::get();
@@ -171,7 +176,6 @@ class ProductController extends Controller
         $product->brand_id = $brand;
         $product->tags()->sync($tags);
         $product->categories()->sync($categories);
-        
         $product->save();
         Toastr::success('Cập nhật bài viết thành công','Thành công');
         return redirect()->route('backend.products.index');

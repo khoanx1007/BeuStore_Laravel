@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Illuminate\Support\Facades\Storage; 
-use App\Permissions\HasPermissionsTrait;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
-    use HasPermissionsTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -23,6 +23,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'address',
+        'phone',
+        'gender',
+        'status'
     ];
 
     /**
@@ -33,8 +37,29 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'two_factor_recovery_codes',
+        'two_factor_secret',
     ];
-
+    const GENDER_MALE = 1;
+    const GENDER_FEMALE = 0;
+    const STATUS = [
+        'ACTIVE' => 1,
+        'DE_ACTIVE' => 0,
+        'UN_CONFIRM' => 2
+    ];
+    static $genderArr = [
+        self::GENDER_MALE => '1',
+        self::GENDER_FEMALE => '0'
+    ];
+    public $genderTextArr = [
+        self::GENDER_MALE => 'Nam',
+        self::GENDER_FEMALE => 'Nữ'
+    ];
+    protected $statusArr = [
+        self::STATUS['ACTIVE'] => 'Tài khoản đang hoạt động',
+        self::STATUS['DE_ACTIVE'] => 'Tài khoản bị khoá',
+        self::STATUS['UN_CONFIRM'] => 'Chưa kích hoạt'
+    ];
     /**
      * The attributes that should be cast.
      *
@@ -43,46 +68,36 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function getMyImageAttribute(){
-        $url = Storage::disk($this->disk)->url($this->image);
-        return $url;
+    public function getStatusTextAttribute()
+    {
+        if ($this->status == self::STATUS['ACTIVE']) {
+            $name = 'Tài khoản đang hoạt động';
+        } else if ($this->status == self::STATUS['UN_CONFIRM']) {
+            $name = 'Chưa kích hoạt';
+        } else {
+            $name = 'Tài khoản bị khoá';
+        }
+        return $name;
+    }
+    public function getGenderTextAttribute()
+    {
+        if ($this->gender == self::GENDER_MALE) {
+            $name = 'Nam';
+        } else {
+            $name = 'Nữ';
+        }
+        return $name;
     }
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
     }
-    public function userInfo(){
+    public function userInfo()
+    {
         return $this->hasOne(UserInfo::class);
     }
-    public function posts(){
-        return $this->hasMany(Post::class,'id');
+    public function posts()
+    {
+        return $this->hasMany(Post::class, 'id');
     }
-    public function roles() {
-        return $this->belongsToMany(Role::class,'users_roles');
-    }
-    public function permissions() {
-
-        return $this->belongsToMany(Permission::class,'users_permissions');
-
-    }
-    protected function hasPermission($permission) {
-
-        return (bool) $this->permissions->where('slug', $permission->slug)->count();
-    }
-
-    public function hasPermissionTo($permission) {
-
-        return $this->hasPermissionThroughRole($permission) || $this->hasPermission($permission);
-    }
-
-    public function hasPermissionThroughRole($permission) {
-
-        foreach ($permission->roles as $role){
-            if($this->roles->contains($role)) {
-                return true;
-            }
-        }
-        return false;
-    }
-    
 }

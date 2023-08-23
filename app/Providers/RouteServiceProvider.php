@@ -17,7 +17,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '/admin/dashboard';
+    public const USER = '/';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -25,12 +26,6 @@ class RouteServiceProvider extends ServiceProvider
      * @return void
      */
     protected $namespace = 'App\Http\Controllers';
-    protected function mapWebRoutes()
-    {
-        Route::middleware('web')
-        ->namespace($this->namespace)
-        ->group(base_path('route/web.php'));
-    }
     public function boot()
     {
         $this->configureRateLimiting();
@@ -53,7 +48,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function configureRateLimiting()
     {
         RateLimiter::for('api', function (Request $request) {
-            return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
+            return Limit::perMinute(60)->by(optional($request->user())->id ?: $request->ip());
         });
     }
 }

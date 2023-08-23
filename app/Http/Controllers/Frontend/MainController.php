@@ -27,9 +27,9 @@ class MainController extends Controller
      */
     public function index()
     {
-        $categories_pc = Category::where('name','PC')->limit(8)->get();
-        $categories_console= Category::where('name','Console')->limit(8)->get();
-        $categories_switch = Category::where('name','Switch')->limit(8)->get();
+        $categories_pc = Category::where('name','PC')->paginate(8);
+        $categories_console= Category::where('name','Console')->paginate(8);
+        $categories_switch = Category::where('name','Switch')->paginate(8);
         $brands = Brand::get();
         $comments = Comment::where('comment_status','1')->limit(3)->get();
         $tags= Tag::get();
@@ -54,10 +54,6 @@ class MainController extends Controller
         $ratinga=round($ratinga,2);
         $ratingc = Rating::where('product_id',$product->id)->count();
         $rating=round($ratinga);
-        $pdrt= new ProductRating();
-        $pdrt->product_id=$product->id;
-        $pdrt->avg_rating=$rating;
-        $pdrt->save();
         $requirement=Requirement::where('product_id',$product->id)->get();
         $products=Product::limit(8)->get();
         return view('frontend.main.article')->with([

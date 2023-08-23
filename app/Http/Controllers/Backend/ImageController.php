@@ -17,7 +17,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $products=Product::get();
+        $products=Product::paginate(8);
         $images=Image::get();
         return view('backend.images.index')->with(
             [

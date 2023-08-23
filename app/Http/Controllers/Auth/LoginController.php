@@ -3,47 +3,40 @@
 namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use App\Http\Requests\AuthenticateLoginRequest;
+use App\Http\Requests\Auth\LoginAdminRequest;
+use App\Http\Requests\Auth\LoginUserRequest;
+use App\Models\Staff;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
-    public function create()
+    public function adminLoginView()
     {
-        return view('auth.login');
+        return view('auth.login_admin');
     }
-    public function authenticate(AuthenticateLoginRequest $request)
+    public function authenticateAdmin(LoginAdminRequest $request)
     {
-        $credentials = $request->validate([
-            'email' => ['required','email'],
-            'password' => ['required'], 
-        ]);
-        if($request->get('remember')){
-            $remember = true;
+        $staff = Staff::where('email',$request->input('email'))->first();
+        if($staff && $staff->status == Staff::STATUS['DE_ACTIVE']){
+            return back()->withErrors([
+                'login' => 'Tài khoản của bạn đã bị khóa'
+            ])->withInput();
         }
-        else{
-            $remember = false;
-        }
-        // dd($remember);
-        
-        if (Auth::attempt($credentials)) {
+        $email = $request->get('email');
+        $password = $request->get('password');
+        if (Auth::guard('admin')->attempt(array('email' => $email,'password' => $password,'status' => Staff::STATUS['ACTIVE']))) {
             $request->session()->regenerate();
-            return redirect()->intended('/');
+            return redirect()->intended('/admin');
         }
-        
         return back()->withErrors([
-            'email' => 'Tài khoản hoặc mật khẩu không chính xác.',
-        ]);
+            'login' => 'Thông tin đăng nhập không chính xác'
+        ])->withInput();
     }
-    public function logout(Request $request){
+    public function authenticateUser(LoginUserRequest $request){
 
-        Auth::guard('web')->logout();
-        $request->session()->invalidate();
-        
-        $request->session()->regenerateToken();
-        
-        return redirect('/');    
     }
-
 }

@@ -18,34 +18,18 @@ class UserController extends Controller
      */
     public function index()
     {
-        $email=\request()->get('email');
-        $name=\request()->get('name');
-        $users_query = User::orderBy('id','desc')->select('*');
-        if (!empty($email)){
-            $users_query = $users_query->where('email',"LIKE","%$email%");
+        $email = \request()->get('email');
+        $name = \request()->get('name');
+        $users_query = User::orderBy('id', 'desc')->select('*');
+        if (!empty($email)) {
+            $users_query = $users_query->where('email', "LIKE", "%$email%");
         }
-        if (!empty($name)){
-            $users_query = $users_query->where('name',"LIKE","%$name%");
+        if (!empty($name)) {
+            $users_query = $users_query->where('name', "LIKE", "%$name%");
         }
-        $users =  $users_query->paginate(5); 
+        $users =  $users_query->paginate(5);
         return view('backend.users.index')->with([
-            'users'=>$users
-        ]);
-    }
-    public function index2()
-    {   
-        $email=\request()->get('email');
-        $name=\request()->get('name');
-        $users_query = User::select('*');
-        if (!empty($email)){
-            $users_query = $users_query->where('email',"LIKE","%$email%");
-        }
-        if (!empty($name)){
-            $users_query = $users_query->where('name',"LIKE","%$name%");
-        }
-        $users = $users_query->onlyTrashed()->paginate(5); 
-        return view('backend.users.index2')->with([
-            'users'=>$users
+            'users' => $users
         ]);
     }
     /**
@@ -67,25 +51,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->get('name')==null){
-                return redirect()->back();
-        }
-        else
-        {
-            $data = $request->only(['name','email','password']);
-            
+        if ($request->get('name') == null) {
+            return redirect()->back();
+        } else {
+            $data = $request->only(['name', 'email', 'password']);
+
             $user = new User();
-            if($request->hasFile('image')){
-                $disk='public';
-                $path= $request->file('image')->store('avatars',$disk);
-                $user->disk=$disk;
-                $user->image=$path;   
+            if ($request->hasFile('image')) {
+                $disk = 'public';
+                $path = $request->file('image')->store('avatars', $disk);
+                $user->disk = $disk;
+                $user->image = $path;
             }
             $user->name = $data['name'];
             $user->email = $data['email'];
             $user->password = $data['password'];
             $user->status = '1';
-            $user->save(); 
+            $user->save();
             return redirect()->route('backend.users.index');
         }
     }
@@ -94,7 +76,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         return view('backend.users.edit')->with([
-            'user'=>$user
+            'user' => $user
         ]);
     }
 
@@ -108,37 +90,30 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->only('name');
-        $user=User::find($id);
-        if($request->hasFile('image')){
-            $disk='public';
-            $path= $request->file('image')->store('avatars',$disk);
-            $user->disk=$disk;
-            $user->image=$path;   
+        $user = User::find($id);
+        if ($request->hasFile('image')) {
+            $disk = 'public';
+            $path = $request->file('image')->store('avatars', $disk);
+            $user->disk = $disk;
+            $user->image = $path;
         }
         $user->name = $data['name'];
         // $user->email = $data['email'];
         // $user->password = $data['password'];
         $user->save();
-        Toastr::success('Cập nhật người dùng thành công','Thành công');
         return redirect()->route('backend.users.index');
-    }   
+    }
     public function destroy($id)
     {
-        
-        $user=User::find($id);
-        // if (! Gate::allows('delete-user',$user)){
-        //     abort(403);
-        // }
+
+        $user = User::find($id);
         User::destroy($id);
-        Toastr::success('Xoá người dùng thành công','Thành công');
         return redirect()->route('backend.users.index');
     }
     public function restore($id)
     {
-        $user=User::withTrashed()->find($id);
+        $user = User::withTrashed()->find($id);
         $user->restore($id);
-        Toastr::success('Khôi phục người dùng thành công','Thành công');
         return redirect()->route('backend.users.index2');
     }
-    
 }
