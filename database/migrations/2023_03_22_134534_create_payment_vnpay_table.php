@@ -13,10 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_ratings', function (Blueprint $table) {
+        Schema::create('payment_vnpay', function (Blueprint $table) {
             $table->id();
-            $table->string('product_id');
-            $table->string('avg_rating');
+            $table->integer('user_id');
+            $table->integer('order_id');
+            $table->string('code');
+            $table->string('money');
+            $table->string('content');
+            $table->integer('status');
+            $table->string('code_bank')->nullable();
+            $table->string('time')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_ratings');
+        Schema::dropIfExists('payment_vnpay');
     }
 };

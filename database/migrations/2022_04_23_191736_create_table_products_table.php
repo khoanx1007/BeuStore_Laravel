@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('price_sale');
             $table->string('category_id');
             $table->string('user_id');
+            $table->string('quantity');
             $table->string('status');
             $table->string('description');
-            $table->string('disk')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->timestamps();
         });
     }

@@ -43,7 +43,6 @@ return [
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
         ],
-
         'ses' => [
             'transport' => 'ses',
         ],

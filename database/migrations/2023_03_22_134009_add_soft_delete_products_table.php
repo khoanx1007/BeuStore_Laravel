@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_ratings', function (Blueprint $table) {
-            $table->id();
-            $table->string('product_id');
-            $table->string('avg_rating');
-            $table->timestamps();
+        Schema::table('products', function (Blueprint $table) {
+            //
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_ratings');
+        Schema::table('products', function (Blueprint $table) {
+            //
+        });
     }
 };

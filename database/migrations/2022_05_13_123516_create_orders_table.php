@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('district');
             $table->string('ward');
             $table->string('notes');
+            $table->string('type_payment');
             $table->string('order_product');
             $table->timestamps();
         });
