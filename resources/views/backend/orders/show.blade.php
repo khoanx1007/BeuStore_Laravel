@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title')
-Danh sách hãng Game
+Thông tin đơn hàng
 @endsection
 @section('content-header')
 <div class="row">

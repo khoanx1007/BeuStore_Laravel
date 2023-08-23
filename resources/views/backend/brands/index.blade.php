@@ -30,7 +30,14 @@ Danh sách hãng Game
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                  <div class="card-title">Danh sách hãng Game</div>
+                  <form>
+                    <div class="input-group input-group-md" style="width: 400px;">
+                      <input type="text" name="name" class="form-control float-right" placeholder="Nhập..">
+                        <button type="submit" class="btn btn-default">
+                          Filter
+                        </button>
+                    </div>
+                  </form>
                   <a href="{{route('backend.brands.create') }}" class="btn btn-info ml-3" id="create-new-product">Thêm hãng Game</a>
                 </div>
                 <div class="card-body">
@@ -43,25 +50,27 @@ Danh sách hãng Game
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($brands as $brand)
-                        <tr data-widget="expandable-table" aria-expanded="true">
-                          <td>
-                            @if (!empty($brand->image))
-                              <img src="{{ $brand->my_image }}" style="width:25%;">   
-                            @endif
-                          </td>
-                          <td>{{$brand->name}}</td>
-                          <td>
-                            <a href="{{route('backend.brands.edit',$brand->id) }}">
-                              <button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>
-                            <form method="POST" action="{{route('backend.brands.destroy',$brand->id) }}">
-                              @csrf
-                              @method('DELETE')
-                              <button  class="btn btn-danger"><i class="fas fa-trash"></i></button>  
-                            </form>                         
-                          </td>
-                        </tr>
-                      @endforeach
+                      @if (!empty($brands))
+                        @foreach($brands as $brand)
+                          <tr data-widget="expandable-table" aria-expanded="true">
+                            <td>
+                              @if (!empty($brand->image))
+                                <img src="{{ $brand->my_image }}" style="width:25%;">   
+                              @endif
+                            </td>
+                            <td>{{$brand->name}}</td>
+                            <td>
+                              <a href="{{route('backend.brands.edit',$brand->id) }}">
+                                <button class="btn btn-primary"><i class="fas fa-edit"></i></button></a>
+                              <form method="POST" action="{{route('backend.brands.destroy',$brand->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button  class="btn btn-danger"><i class="fas fa-trash"></i></button>  
+                              </form>                         
+                            </td>
+                          </tr>
+                        @endforeach
+                      @endif
                     </tbody>
                   </table>
                 </div>

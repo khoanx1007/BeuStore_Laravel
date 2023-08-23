@@ -1,4 +1,4 @@
-@extends('frontend.layouts.client');
+@extends('frontend.layouts.client')
 @section('css')
 @endsection
 @section('content')
@@ -35,13 +35,13 @@
 							<form>
 								@csrf
 								<select name="sort" id="sort">
-									<option value="{{ Request::url() }}?sort_by=none">--Lọc--</option>
+									<option value="{{ Request::url() }}?sort_by=none" >--Lọc--</option>
 									<option value="{{ Request::url() }}?sort_by=az">A đến Z</option>
-									<option value="{{ Request::url() }}?sort_by=za">Z đến A</option>
-									<option value="{{ Request::url() }}?sort_by=tang_dan">Giá tăng dần</option>
-									<option value="{{ Request::url() }}?sort_by=giam_dan">Giá giảm dần</option>
-									<option value="{{ Request::url() }}?sort_by=new">Mới nhất</option>
-									<option value="{{ Request::url() }}?sort_by=old">Cũ nhất</option>
+									<option value="{{ Request::url() }}?sort_by=za" >Z đến A</option>
+									<option value="{{ Request::url() }}?sort_by=tang_dan" >Giá tăng dần</option>
+									<option value="{{ Request::url() }}?sort_by=giam_dan" >Giá giảm dần</option>
+									<option value="{{ Request::url() }}?sort_by=new" >Mới nhất</option>
+									<option value="{{ Request::url() }}?sort_by=old" >Cũ nhất</option>
 								</select>
 							</form>
 						</div>

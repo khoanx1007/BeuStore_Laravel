@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title')
-Cập nhật sản phẩm
+Chỉnh sửas hình ảnh
 @endsection
 @section('content')
 <div class="page-inner">

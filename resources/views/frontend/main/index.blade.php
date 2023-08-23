@@ -4,89 +4,18 @@
         <div class="bannerslide owl-theme owl-carousel m-0 mt-5">
             <div class="img-bg">
                 <img src="frontend/img/bg1.jpg">
-                <div class="container">
-                    <div class="row m-0 absolute">
-                        <div class="col-xl-6 col-lg-6 col-12 pl-xl-5 pl-lg-5 pl-md-5 pl-3">
-                            <div class="text-inside text-white ">
-                                <span>Rất nhiều sự lựa chọn</span>
-                                <p>Game of The Year: Full Edition</p>
-                                <h4>God of war, Far Cry 6...</h4>
-                                <div class="btn-shop">
-                                    <a href="{{ route('frontend.main.shop') }}">
-                                        Đọc thêm
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="img-bg">
                 <img src="frontend/img/bg2.jpg" >
-                <div class=" container">
-                    <div class="row m-0 absolute">
-                        <div class="col-xl-6 col-lg-6 col-12 pl-xl-5 pl-lg-5 pl-md-5 pl-3">
-                            <div class="text-inside text-white">
-                                <span>Giảm giá 10%</span>
-                                <p>Game dành cho PC, Console, Switch</p>
-                                <h4>Chỉ trong tuẩn này.</h4>
-                                <div class="btn-shop">
-                                    <a href="{{ route('frontend.main.shop') }}">
-                                        Đọc thêm
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>   
-    <div class="bannerbottom mt-3">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-6 col-sm-12 mb-3">
-                    <div class="bannerb-left text-white">
-                        <span>Sony Interactive Entertainment</span>
-                        <h1>God of War 4</h1>
-                        <h6>Hành trình vĩ đại của 2 cha con nhà Kratos ở vùng đất Bắc Âu</h6>
-                        <div class="buy-shop">
-                            <a href="{{ route('frontend.main.info',11) }}">
-                                XEM NGAY
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-12 mb-3">
-                    <div class="bannerb-right text-white">
-                        <span>Rockstar Games</span>
-                        <h1>Red Dead Redemption 2</h1>
-                        <h6>Cuộc đời đầy hào dùng của Athur Morgan và hành trình chống lại số phận của anh ấy</h6>
-                        <div class="buy-shop">
-                            <a href="{{ route('frontend.main.info',18) }}.html">
-                                XEM NGAY
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="category-home" >
         <div class="container">
             <div class="row dark">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-12">
                     <div class="category-home-next_text">
-                   <h3>Danh mục game</h3>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-md-6 col-12">
-                    <div class="category-home-next_list">
-                        <ul class="d-flex pt-2">
-                            <li class="PC blue" >PC</li>
-                            <li class="Console" >Console</li>
-                            <li class="Switch" >Switch</li>
-                        </ul>
+                   <h3>Hot Gear</h3>
                     </div>
                 </div>
             </div>
@@ -144,148 +73,16 @@
                         @endforeach
                     @endforeach
                 </div>
-            </div>
-            <div class="product-console pb-5">
-                <div class="row">
-                    @foreach ($categories_console as $category )
-                        @foreach ($category->products2 as $product )
-                            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                                <div class="product-box" >
-                                    <div class="card">
-                                        <div class="card-img">
-                                            <a>
-                                                <img class="card-img-top" src="{{ $product->my_image }}">
-                                            </a>
-                                        </div>
-                                        <div class="tag-label">
-                                            @foreach ($product->tags as $tag)
-                                                <div class="badge p-2
-                                                @if ($tag->name == "Hot")
-                                                    badge-danger
-                                                @elseif ($tag->name == "Mới")
-                                                    badge-info
-                                                @elseif ($tag->name ==  "Yêu thích")
-                                                    badge-success       
-                                                @else
-                                                    badge-warning
-                                                @endif"> 
-                                                    {{ $tag->name }}
-                                                </div> 
-                                            @endforeach
-                                        </div>
-                                        <div class="card-block d-flex flex-column align-items-center"> 
-                                            <span class="font">
-                                            <form class="d-flex flex-column align-items-center">
-                                                @csrf
-                                                <input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
-                                                <input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
-                                                <input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
-                                                <input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
-                                                <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
-                                                <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
-                                                </span>
-                                                <span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span>
-                                                <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
-                                            </form>
-                                            {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
-                                                @csrf
-                                                <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
-                                            </form> --}}
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    @endforeach
-                </div>
-            </div>
-            <div class="product-switch pb-5">
-                <div class="row">
-                    @foreach ($categories_switch  as $category )
-                        @foreach ($category->products2 as $product )
-                            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
-                                <div class="product-box" >
-                                    <div class="card">
-                                        <div class="card-img">
-                                            <a>
-                                                <img class="card-img-top" src="{{ $product->my_image }}">
-                                            </a>
-                                        </div>
-                                        <div class="tag-label">
-                                            @foreach ($product->tags as $tag)
-                                                <div class="badge p-2
-                                                @if ($tag->name == "Hot")
-                                                    badge-danger
-                                                @elseif ($tag->name == "Mới")
-                                                    badge-info
-                                                @elseif ($tag->name ==  "Yêu thích")
-                                                    badge-success       
-                                                @else
-                                                    badge-warning
-                                                @endif"> 
-                                                    {{ $tag->name }}
-                                                </div> 
-                                            @endforeach
-                                        </div>
-                                        <div class="card-block d-flex flex-column align-items-center"> 
-                                            <span class="font">
-                                            <form class="d-flex flex-column align-items-center">
-                                                @csrf
-                                                <input type="hidden" value="{{ $product->id }}"class="cart_product_id_{{ $product->id }}">
-                                                <input type="hidden" value="{{ $product->name }}"class="cart_product_name_{{ $product->id }}">
-                                                <input type="hidden" value="{{ $product->my_image }}"class="cart_product_image_{{ $product->id }}">
-                                                <input type="hidden" value="{{ $product->price_origin }}"class="cart_product_price_{{ $product->id }}">
-                                                <input type="hidden" value="1"class="cart_product_qty_{{ $product->id }}">
-                                                <a class="infocard font-weight-bold" href="{{ route('frontend.main.info',$product->id) }}">{{ $product->name }}</a>
-                                                </span>
-                                                <span class="font-weight-bolder font-italic text-secondary">{{ $product->price_origin }}$</span>
-                                                <button type="button" class="btn btn-primary add-to-cart" data-id_product="{{ $product->id }}" name="add-to-cart">Thêm giỏ hàng</button>
-                                            </form>
-                                            {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
-                                                @csrf
-                                                <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
-                                            </form> --}}
-                                            
-                                        </div>
-                                    </div>
-                                    {{-- <form action="{{ route('frontend.carts.add',$product->id) }}" method="POST">
-                                        @csrf
-                                        <button class="btn btn-primary"><span>Thêm vào giỏ hàng</span></button>                            
-                                    </form> --}}
-                                    
-                                </div>
-                            </div>
-                        @endforeach
-                    @endforeach
-                </div>
+                {{$categories_pc->links()}}
             </div>
         </div>  
-    </div>
-    <div class="gta-v mb-5" data-aos="fade-up">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-sm-8 col-10">
-                    <div class="gta-v-text text-white">
-                        <h1>Rockstar Games</h1>
-                        <span id="GtaV-text">Grand Thief Auto V</span>
-                        <p class="h5">One of the best open-world games of all time on PC, Top 2 Best-selling game, Game of the Decade...</p>
-                        <div class="btn-shop mt-xl-3 mt-lg-3 mt-0">
-                            <a href="shop-details.html">
-                                Buy Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="new-products" >
         <div class="container">
             <div class="row mb-3 ">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-12">
                    <div class="category-home_text">
-                       <h3>Game mới</h3>
+                       <h3>New Gear</h3>
                    </div>
                 </div>
                 <div class="col-xl-6 col-md-6 col-12">

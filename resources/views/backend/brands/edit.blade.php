@@ -1,4 +1,7 @@
 @extends('backend.layouts.master')
+@section('title')
+Sửa hãng Game
+@endsection
 @section('content')
 <div class="page-inner">
   <div class="page-header">
@@ -29,7 +32,7 @@
             </div>
             <div class="form-group">
               <label>Tên:</label>
-              <input type="text" name="name" class="form-control" placeholder="Nhập...">
+              <input type="text" name="name" class="form-control" placeholder="Nhập..." value="{{ $brand->name }}">
             </div>
           </div>
           <!-- /.card-body -->

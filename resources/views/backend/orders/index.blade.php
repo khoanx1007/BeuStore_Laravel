@@ -1,6 +1,6 @@
 @extends('backend.layouts.master')
 @section('title')
-Danh sách hãng Game
+Danh sách đơn hàng
 @endsection
 @section('content-header')
 <div class="row">
@@ -30,7 +30,14 @@ Danh sách hãng Game
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                  <div class="card-title">Danh sách đơn hàng</div>
+                  <form>
+                    <div class="input-group input-group-md" style="width: 400px;">
+                      <input type="text" name="name" class="form-control float-right" placeholder="Nhập..">
+                        <button type="submit" class="btn btn-default">
+                          Filter
+                        </button>
+                    </div>
+                  </form>
                 </div>
                 <div class="card-body">
                   <table class="table table-head">

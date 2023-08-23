@@ -35,10 +35,10 @@
 <div class="limiter">
   <div class="container-login100">
     <div class="login100-more" style="background-image: url('/frontend/register/images/bg-01.jpg');"></div>
-    <div class="wrap-login100 p-l-30 p-r-30 p-t-40 p-b-30 ">
-      <form class="login100-form validate-form" action="{{ route('auth.register') }}" method="post">
+    <div class="wrap-login100 p-l-30 p-r-30 p-t-30 p-b-30 ">
+      <form class="login100-form validate-form" action="{{ route('user.register') }}" method="post">
         @csrf
-        <span class="login100-form-title p-b-12">
+        <span class="login100-form-title p-b-50">
           Đăng ký thành viên
         </span>
         <div class="wrap-input100 validate-input">
@@ -66,33 +66,37 @@
           <span class="label-input100">Nhập lại mật khẩu</span>
           <input class="input100" type="password" name="password_confirmation" placeholder="********">
           <span class="focus-input100"></span>
-          @error('password') <div class="alert-validate" data-validate = "{{ $message }}"></div>@enderror
+          @error('password_confirmation') <div class="alert-validate" data-validate = "{{ $message }}"></div>@enderror
         </div>
-
-        <div class="flex-m w-full p-b-33">
-          <div class="contact100-form-checkbox">
-            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-            <label class="label-checkbox100" for="ckb1">
-              <span class="txt1">
-                Tôi đồng ý với
-                <a href="#" class="txt2 hov1">
-                  Điều khoản sử dụng
-                </a>
-              </span>
-            </label>
+        <div class="wrap-input100 validate-input">
+          <span class="label-input100">Giới tính</span>
+          <div class="select100">
+              <select class="selection-100" name="name="gender">
+                @foreach (\App\Models\User::$genderArr as $item)
+                  <option value="{{$item}}" {{ (old("gender") == $item) ? 'selected' : '' }}>
+                      @if($item==App\Models\User::GENDER_MALE) Nam
+                      @elseif($item==App\Models\User::GENDER_FEMALE) Nữ
+                      @endif
+                  </option>
+                @endforeach
+              </select>
+              <span class="focus-input100"></span>
           </div>
-
-          
-        </div>
-
+        </div>       
+        <div class="wrap-input100 validate-input">
+          <span class="label-input100">Số điện thoại</span>
+          <input class="input100" type="text" name="phone" placeholder="Nhập SĐT">
+          <span class="focus-input100"></span>
+          @error('phone') <div class="alert-validate" data-validate = "{{ $message }}"></div>@enderror
+        </div>      
         <div class="container-login100-form-btn">
           <div class="wrap-login100-form-btn">
             <div class="login100-form-bgbtn"></div>
             <button class="login100-form-btn">
-              Đăng ký
+              Đăng ký tài khoản
             </button>
           </div>
-          <a href="{{ route('auth.login') }}" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+          <a href="{{ route('user.login') }}" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
             Đăng nhập
             <i class="fa fa-long-arrow-right m-l-5"></i>
           </a>
@@ -120,8 +124,6 @@
 	<script src="/frontend/register/vendor/countdowntime/countdowntime.js"></script>
   <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
         {!! Toastr::message() !!}
-<!--===============================================================================================-->
-	{{-- <script src="/frontend/register/js/main.js"></script> --}}
 @endsection
 
      

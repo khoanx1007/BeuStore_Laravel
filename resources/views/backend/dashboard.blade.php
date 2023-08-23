@@ -1,4 +1,10 @@
 @extends('backend.layouts.master')
+@section('title')
+Trang chủ
+@endsection
+@section('preloader')
+
+@endsection
 @section('css')
 @endsection
 @section('content')

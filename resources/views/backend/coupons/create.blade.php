@@ -1,4 +1,7 @@
 @extends('backend.layouts.master')
+@section('title')
+Tạo mã giảm giá
+@endsection
 @section('content')
 <div class="page-inner">
   <div class="page-header">

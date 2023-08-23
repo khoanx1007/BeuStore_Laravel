@@ -1,4 +1,7 @@
 @extends('backend.layouts.master')
+@section('title')
+Danh sách User
+@endsection
 @section('content')
 <div class="page-inner">
   <div class="page-header">
@@ -27,10 +30,17 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header">
-          <div class="card-title">Danh sách thành viên</div>
+          <form>
+            <div class="input-group input-group-md" style="width: 400px;">
+              <input type="text" name="name" class="form-control float-right" placeholder="Nhập..">
+                <button type="submit" class="btn btn-default">
+                  Filter
+                </button>
+            </div>
+          </form>
         </div>
         <div class="card-body">
-          <table class="table table-head-bg-primary">
+          <table class="table table-head">
             <thead>
               <tr>
                 <th scope="col">Người dùng</th>

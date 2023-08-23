@@ -1,4 +1,7 @@
 @extends('backend.layouts.master')
+@section('title')
+Danh sách các sản phẩm
+@endsection
 @section('css')
 <style>
   .tag {
@@ -74,7 +77,14 @@
     <div class="col-md-12">
       <div class="card">
         <div class="card-header d-flex justify-content-between">
-          <div class="card-title">Danh sách sản phẩm</div>
+          <form>
+            <div class="input-group input-group-md" style="width: 400px;">
+              <input type="text" name="name" class="form-control float-right" placeholder="Name">
+                <button type="submit" class="btn btn-default">
+                  Filter
+                </button>
+            </div>
+          </form>
           <a href="{{route('backend.products.create') }}" class="btn btn-info ml-3" id="create-new-product">Thêm mới</a>
         </div>
         <div class="card-body">
@@ -130,7 +140,9 @@
               @endforeach
             </tbody>
           </table>
+          {{ $products->links() }}
         </div>
+        
         {{-- @include('backend.products.create')
         @include('backend.products.edit') --}}
       </div>

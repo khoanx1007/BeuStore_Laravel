@@ -70,15 +70,17 @@ Danh sách danh mục
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach($categories as $category)
-                        <tr data-widget="expandable-table" aria-expanded="true">
-                          <td>{{$category->id}}</td>
-                          <td class="text-primary" style="max-width:80px;" >{{$category->name}}
-                          <p class="text-dark">Slug: {{$category->slug}}</p>
-                          </td>
-                          <td>{{$category->created_at}}</td>
-                        </tr>
-                      @endforeach
+                      @if (!empty($categories))
+                        @foreach($categories as $category)
+                          <tr data-widget="expandable-table" aria-expanded="true">
+                            <td>{{$category->id}}</td>
+                            <td class="text-primary" style="max-width:80px;" >{{$category->name}}
+                            <p class="text-dark">Slug: {{$category->slug}}</p>
+                            </td>
+                            <td>{{$category->created_at}}</td>
+                          </tr>
+                        @endforeach
+                      @endif
                     </tbody>
                   </table>
                 </div>

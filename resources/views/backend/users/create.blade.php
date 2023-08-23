@@ -1,4 +1,7 @@
 @extends('backend.layouts.master')
+@section('title')
+Tạo người dùng
+@endsection
 @section('content')
 <div class="page-inner">
   <div class="page-header">

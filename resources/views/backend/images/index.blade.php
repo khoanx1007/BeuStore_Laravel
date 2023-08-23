@@ -1,4 +1,7 @@
 @extends('backend.layouts.master')
+@section('title')
+Thêm hình ảnh
+@endsection
 @section('css')
 <style>
   .image{
@@ -67,6 +70,7 @@
                     <td>{{ $product->name }}</td>
                     <td class="cointainer">
                       <div class="row">
+                        @if(!empty($images))
                           @foreach ($images as $image )
                             @if ($product->id == $image->product_id)
                               @if (!empty($image->image))
@@ -85,13 +89,14 @@
                               @endif
                             @endif
                           @endforeach 
+                        @endif
                       </div>  
                     </td>
                   </tr>              
               @endforeach
-              
             </tbody>
           </table>
+          {{ $products->links() }}
         </div>
         {{-- @include('backend.products.create')
         @include('backend.products.edit') --}}

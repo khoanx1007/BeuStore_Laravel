@@ -45,7 +45,7 @@ Tạo sản phẩm
               <label>Tên Sản phẩm</label>
               <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nhập..." value="{{ old('name') }}">
               @error('name')
-                <div class="alert alert-danger">{{ $message }}</div>
+                <div class="form-text text-danger">{{ $message }}</div>
               @enderror
             </div>
             <div class="form-group" >

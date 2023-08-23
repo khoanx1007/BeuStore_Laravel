@@ -66,7 +66,7 @@
 				<div class="category text-white">
 					<span class="cate-click rounded-circle">
 						<i class="align fas fa-align-left"></i>
-						<b>Theo hãng Game</b>
+						<b>Danh mục sản phẩm</b>
 					</span>
 				</div>
 				<div class="category-menu">
